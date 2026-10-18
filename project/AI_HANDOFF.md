@@ -19,7 +19,7 @@
 - TASK-002 strategy and sitemap: DONE, G1 approved (D-008); Home copy v0.2 at G2; language RO+EN (D-009)
 - TASK-003 lab facts and Print Lab copy brief (G2): REVIEW, owner ChatGPT
 - TASK-004 Shopify architecture and edition model: DONE, D-006 (Basic approved, not bought) and D-007 approved
-- TASK-005 visual direction brief (G3): IMPLEMENT, owner ChatGPT; hex values wait for MONO brand assets (question 14)
+- TASK-005 visual brief v0.2 (G3): IMPLEMENTED and merged; Dan approves G3 after the Claude prototype
 
 ## Blockers (all need a decision from Dan or Vladimir)
 
