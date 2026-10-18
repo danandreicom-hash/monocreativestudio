@@ -1,6 +1,6 @@
 # TASK-005 — Visual direction brief (gate G3)
 
-- Status: REVIEW (becomes IMPLEMENT when Dan sets it)
+- Status: IMPLEMENT (set by Dan, 2026-10-18)
 - Owner / branch: CODEX / `codex/TASK-005`
 - Goal: write `04_DESIGN_SPEC.md` (under 3 pages) as the brief for the Claude Design prototype. Dan leads the creative direction.
 - Authorized by: D-001, D-005.
