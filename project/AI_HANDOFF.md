@@ -20,6 +20,7 @@
 - TASK-003 lab facts and Print Lab copy brief (G2): REVIEW, owner ChatGPT
 - TASK-004 Shopify architecture and edition model: DONE, D-006 (Basic approved, not bought) and D-007 approved
 - TASK-005 visual brief v0.2 (G3): IMPLEMENTED and merged; Dan approves G3 after the Claude prototype
+- TASK-006 print configurator and file upload spec: REVIEW, owner ChatGPT (starts when Dan sets IMPLEMENT)
 
 ## Blockers (all need a decision from Dan or Vladimir)
 

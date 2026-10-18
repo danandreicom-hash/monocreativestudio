@@ -9,5 +9,6 @@ One owner per task. Rules: `project/COORDINATION.md`. Owner is `CLAUDE`, `CODEX`
 | TASK-003 | REVIEW      | CODEX | -               | -          | `project/lab-facts.md`, `copy/print-lab*.md`                                                   |
 | TASK-004 | DONE        | NONE  | codex/TASK-004  | 2026-10-18 | `project/05_DEV_SPEC.md`, `project/shop-model.md`, `project/tasks/TASK-004.md`                 |
 | TASK-005 | IMPLEMENTED | NONE  | codex/TASK-005  | 2026-10-18 | `project/04_DESIGN_SPEC.md`                                                                    |
+| TASK-006 | REVIEW      | CODEX | -               | -          | `project/05_DEV_SPEC.md`, `project/configurator.md`                                            |
 
 Add one row per task. Remove nothing; set the owner to `NONE` and the status to `IMPLEMENTED` on merge.
