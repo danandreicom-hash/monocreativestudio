@@ -24,7 +24,7 @@
 ## Blockers (all need a decision from Dan or Vladimir)
 
 - Open questions 1 to 7 in `project/00_PROJECT.md` (question 1, language, is closed by D-009).
-- Decide: default language for `/`; Vladimir answers; accountant and legal review (shop-model open questions).
+- Decide: language detection method (D-013); Vladimir answers; accountant and legal review (shop-model open questions).
 
 ## Standing rules
 
