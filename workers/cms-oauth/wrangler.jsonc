@@ -1,0 +1,13 @@
+{
+  "$schema": "../../node_modules/wrangler/config-schema.json",
+  // Deployat O SINGURĂ DATĂ la nivel de CCI, nu per client — orice site clonat
+  // din acest boilerplate poate folosi aceeași instanță (vezi README § Panoul
+  // de conținut). Nu redenumi/reclona per client.
+  "name": "you-on-the-com-cms-oauth",
+  "main": "./src/index.ts",
+  "compatibility_date": "2026-07-01",
+
+  "observability": {
+    "enabled": true,
+  },
+}

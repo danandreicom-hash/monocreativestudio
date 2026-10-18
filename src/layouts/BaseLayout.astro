@@ -1,0 +1,50 @@
+---
+import { ClientRouter } from "astro:transitions";
+import { Font } from "astro:assets";
+import Seo from "@components/seo/Seo.astro";
+import OrganizationSchema from "@components/seo/OrganizationSchema.astro";
+import SkipLink from "@components/ui/SkipLink.astro";
+import Header from "@components/layout/Header.astro";
+import Footer from "@components/layout/Footer.astro";
+import "../styles/global.css";
+
+interface Props {
+  title: string;
+  description?: string;
+  image?: string;
+  type?: "website" | "article";
+  noindex?: boolean;
+}
+
+const { title, description, image, type, noindex } = Astro.props;
+---
+
+<!doctype html>
+<html lang="ro">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/png" href="/favicon.png" sizes="32x32" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <meta name="generator" content={Astro.generator} />
+
+    <!-- Fonturi auto-găzduite (vezi astro.config.mjs § fonts) — Inter preîncărcat
+         fiindcă e fontul corpului de text, folosit imediat above-the-fold. -->
+    <Font cssVariable="--font-inter" preload />
+    <Font cssVariable="--font-fraunces" />
+
+    <Seo title={title} description={description} image={image} type={type} noindex={noindex} />
+    <OrganizationSchema />
+    <ClientRouter />
+  </head>
+  <body>
+    <SkipLink />
+    <Header />
+    <main id="main-content">
+      <slot />
+    </main>
+    <Footer />
+  </body>
+</html>

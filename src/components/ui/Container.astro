@@ -1,0 +1,16 @@
+---
+/**
+ * Wrapper standard de lățime + padding orizontal, folosit de toate
+ * secțiunile ca să păstreze conținutul aliniat pe toată pagina.
+ */
+interface Props {
+  class?: string;
+  as?: keyof HTMLElementTagNameMap;
+}
+
+const { class: className, as: Tag = "div" } = Astro.props;
+---
+
+<Tag class:list={["mx-auto max-w-(--container-content) px-6 lg:px-8", className]}>
+  <slot />
+</Tag>

@@ -1,0 +1,51 @@
+---
+/**
+ * Set minimal de iconițe SVG inline (stroke, 24×24), fără nicio dependință
+ * externă de librării de iconițe. Adaugă un nume nou în obiectul `paths`
+ * de mai jos dacă ai nevoie de o iconiță în plus.
+ *
+ * Utilizare: <Icon name="strategy" class="size-6 text-brand-600" />
+ */
+interface Props {
+  name: keyof typeof paths;
+  class?: string;
+  "aria-hidden"?: boolean;
+}
+
+const paths = {
+  strategy:
+    "M12 2v6m0 8v6m10-10h-6M8 12H2m15.07-7.07-4.24 4.24m-5.66 5.66-4.24 4.24m14.14 0-4.24-4.24M7.76 7.76 3.52 3.52M12 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z",
+  finance: "M3 20V10m6 10V4m6 16V13m6 7V7",
+  digital: "M9 3v4M15 3v4M9 17v4M15 17v4M3 9h4M3 15h4M17 9h4M17 15h4M7 7h10v10H7V7Z",
+  operations:
+    "M12 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6Zm8-3a8 8 0 0 0-.13-1.44l2.11-1.65-2-3.46-2.49 1a8 8 0 0 0-2.5-1.45L14.5 2h-5l-.49 2.5a8 8 0 0 0-2.5 1.45l-2.49-1-2 3.46 2.11 1.65A8 8 0 0 0 4 12c0 .49.04.97.13 1.44l-2.11 1.65 2 3.46 2.49-1a8 8 0 0 0 2.5 1.45L9.5 22h5l.49-2.5a8 8 0 0 0 2.5-1.45l2.49 1 2-3.46-2.11-1.65c.09-.47.13-.95.13-1.44Z",
+  people:
+    "M17 21v-2a4 4 0 0 0-4-4H7a4 4 0 0 0-4 4v2m18 0v-2a4 4 0 0 0-3-3.87M14 3.13a4 4 0 0 1 0 7.75M10 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8Z",
+  growth: "M3 17 9 11l4 4 8-8m0 0h-5m5 0v5",
+  arrowRight: "M5 12h14m0 0-6-6m6 6-6 6",
+  menu: "M4 6h16M4 12h16M4 18h16",
+  close: "M6 6l12 12M18 6 6 18",
+  check: "M20 6 9 17l-5-5",
+  linkedin:
+    "M6.94 5a2 2 0 1 1-4-.002 2 2 0 0 1 4 .002ZM3.2 8.75h3.5V21H3.2V8.75Zm6.2 0h3.36v1.68h.05c.47-.88 1.6-1.8 3.3-1.8 3.53 0 4.18 2.32 4.18 5.34V21h-3.5v-5.72c0-1.36-.02-3.12-1.9-3.12-1.9 0-2.2 1.48-2.2 3.02V21H9.4V8.75Z",
+  mail: "M3 6h18v12H3V6Zm0 0 9 7 9-7",
+  phone:
+    "M4 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L14 13l5 2v4a2 2 0 0 1-2 2C9.4 21 3 14.6 3 6a2 2 0 0 1 1-2Z",
+  mapPin: "M12 22s7-6.5 7-12a7 7 0 1 0-14 0c0 5.5 7 12 7 12Zm0-9a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z",
+} as const;
+
+const { name, class: className, "aria-hidden": ariaHidden = true } = Astro.props;
+---
+
+<svg
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="1.75"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+  class={className}
+  aria-hidden={ariaHidden}
+>
+  <path d={paths[name]}></path>
+</svg>

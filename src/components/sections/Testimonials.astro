@@ -1,0 +1,41 @@
+---
+import { getCollection } from "astro:content";
+import Container from "@components/ui/Container.astro";
+import SectionHeading from "@components/ui/SectionHeading.astro";
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const { title = "Ce spun clienții", description } = Astro.props;
+
+const testimonials = (await getCollection("testimonials")).sort(
+  (a, b) => a.data.order - b.data.order,
+);
+---
+
+<section class="bg-slate-50 py-20 sm:py-28">
+  <Container>
+    <SectionHeading eyebrow="Testimoniale" title={title} description={description} align="center" />
+    <ul class="mt-14 grid gap-6 lg:grid-cols-3">
+      {
+        testimonials.map((testimonial) => (
+          <li>
+            <figure class="flex h-full flex-col rounded-(--radius-card) bg-white p-7 shadow-(--shadow-card)">
+              <blockquote class="flex-1 text-slate-700">
+                <p>“{testimonial.data.quote}”</p>
+              </blockquote>
+              <figcaption class="mt-5 border-t border-slate-100 pt-4 text-sm">
+                <p class="font-semibold text-slate-900">{testimonial.data.authorName}</p>
+                <p class="text-slate-500">
+                  {testimonial.data.authorRole}, {testimonial.data.company}
+                </p>
+              </figcaption>
+            </figure>
+          </li>
+        ))
+      }
+    </ul>
+  </Container>
+</section>

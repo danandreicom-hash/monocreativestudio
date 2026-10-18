@@ -1,0 +1,28 @@
+---
+/**
+ * Antet standard de secțiune: eyebrow (etichetă mică) + titlu + descriere
+ * opțională. Folosit de toate secțiunile de conținut pentru consecvență
+ * vizuală și ierarhie corectă a titlurilor (h2).
+ */
+interface Props {
+  eyebrow?: string;
+  title: string;
+  description?: string;
+  align?: "left" | "center";
+  class?: string;
+}
+
+const { eyebrow, title, description, align = "left", class: className } = Astro.props;
+---
+
+<div
+  class:list={["max-w-2xl", align === "center" ? "mx-auto text-center" : "text-left", className]}
+>
+  {
+    eyebrow && (
+      <p class="text-brand-600 mb-3 text-sm font-semibold tracking-wide uppercase">{eyebrow}</p>
+    )
+  }
+  <h2 class="text-3xl sm:text-4xl">{title}</h2>
+  {description && <p class="mt-4 text-lg text-slate-600">{description}</p>}
+</div>

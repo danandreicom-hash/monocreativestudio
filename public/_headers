@@ -1,0 +1,42 @@
+# ═══════════════════════════════════════════════════════════════════════
+# Security headers — Cloudflare Workers Static Assets citește acest fișier
+# automat și aplică header-ele pe toate răspunsurile de conținut static
+# (paginile HTML, CSS, JS, imaginile). Nu necesită configurare per client.
+#
+# Notă: formularul de contact NU e servit de acest site — e un Worker complet
+# separat (workers/contact-form/), legat de /api/contact prin Cloudflare
+# Routes. Acest site principal nu are nicio rută /api/*.
+#
+# Dacă adaugi un script terță parte (ex. Google Analytics, Mailchimp,
+# Cloudflare Turnstile), extinde directivele corespunzătoare din CSP mai
+# jos — altfel browserul îl va bloca.
+# ═══════════════════════════════════════════════════════════════════════
+
+/*
+  X-Frame-Options: DENY
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=(), interest-cohort=()
+  Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
+  Content-Security-Policy: default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self' data:; connect-src 'self'; frame-ancestors 'self'; base-uri 'self'; form-action 'self'; object-src 'none'; upgrade-insecure-requests
+
+# Asset-urile compilate de Astro (JS/CSS cu hash în nume) — cache lung, sigur
+# pentru că orice modificare de conținut generează un nume de fișier nou.
+/_astro/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/favicon.svg
+  Cache-Control: public, max-age=604800
+
+# Panoul de conținut (Decap CMS) — încarcă un script extern (unpkg.com) și
+# folosește intern `eval`/`new Function` (nevoie reală a bundle-ului Decap,
+# nu ceva ce putem elimina din config), deci are nevoie de o CSP proprie, mai
+# permisivă. Detașăm explicit CSP-ul strict de mai sus (regulile _headers se
+# combină, nu se suprascriu — fără "!" aici, pagina ar respecta AMBELE
+# politici simultan și scriptul tot ar fi blocat). Accesul rămâne protejat
+# prin GitHub OAuth (vezi workers/cms-oauth/) — doar conturi cu drept de
+# scriere pe repo pot edita ceva, indiferent de CSP.
+/admin/*
+  ! Content-Security-Policy
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-eval' https://unpkg.com; style-src 'self' 'unsafe-inline' https://unpkg.com; img-src 'self' data: https:; font-src 'self' data: https://unpkg.com; connect-src 'self' https://api.github.com https://*.githubusercontent.com https://you-on-the-com-cms-oauth.danandrei-com.workers.dev; frame-src 'self'; base-uri 'self'; form-action 'self'; object-src 'none'
+  X-Robots-Tag: noindex, nofollow

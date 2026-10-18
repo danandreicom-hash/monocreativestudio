@@ -1,0 +1,19 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  // Schimbă "name" la un identificator unic per client (ex. "acme-corp-site").
+  "name": "you-on-the-com",
+  "compatibility_date": "2026-07-01",
+
+  // Site 100% static — Cloudflare servește fișierele din dist/ direct, fără
+  // worker (fără câmp "main"). Formularul de contact e un Worker separat,
+  // definit în workers/contact-form/wrangler.jsonc — vezi README § Formularul
+  // de contact.
+  "assets": {
+    "directory": "./dist",
+    "not_found_handling": "404-page",
+  },
+
+  "observability": {
+    "enabled": true,
+  },
+}

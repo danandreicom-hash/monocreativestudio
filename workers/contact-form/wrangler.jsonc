@@ -1,0 +1,22 @@
+{
+  "$schema": "../../node_modules/wrangler/config-schema.json",
+  // Schimbă și acest "name" la clonare (independent de numele site-ului principal).
+  "name": "you-on-the-com-contact-form",
+  "main": "./src/index.ts",
+  "compatibility_date": "2026-07-01",
+
+  // Leagă acest worker de calea /api/contact de pe domeniul final al clientului,
+  // ca din perspectiva browserului să fie same-origin (fără CORS). Schimbă
+  // "example.com" cu domeniul real ÎNAINTE de primul deploy — vezi README
+  // § Formularul de contact pentru pașii completi.
+  "routes": [
+    {
+      "pattern": "example.com/api/contact",
+      "zone_name": "example.com",
+    },
+  ],
+
+  "observability": {
+    "enabled": true,
+  },
+}

@@ -1,0 +1,167 @@
+---
+import { siteConfig } from "@data/site.config";
+import Container from "@components/ui/Container.astro";
+import SectionHeading from "@components/ui/SectionHeading.astro";
+import Icon from "@components/icons/Icon.astro";
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const {
+  title = "Discută cu noi",
+  description = "Descrie pe scurt situația companiei tale — răspundem în maximum o zi lucrătoare.",
+} = Astro.props;
+
+const { address } = siteConfig.contact;
+
+// În producție, worker-ul formularului e legat pe /api/contact prin Cloudflare
+// Routes (same-origin, vezi workers/contact-form/wrangler.jsonc), deci calea
+// relativă e suficientă. În development local (`astro dev`), acea rută nu
+// există — setează PUBLIC_CONTACT_ENDPOINT în .env către adresa locală a
+// worker-ului (implicit http://localhost:8787, pornit cu `npm run dev:contact-form`)
+// ca formularul să funcționeze complet și local. Vezi README § Formularul de contact.
+const contactEndpoint = import.meta.env.PUBLIC_CONTACT_ENDPOINT || "/api/contact";
+---
+
+<section id="contact" class="py-20 sm:py-28">
+  <Container>
+    <SectionHeading eyebrow="Contact" title={title} description={description} />
+
+    <div class="mt-14 grid gap-12 lg:grid-cols-5">
+      <form
+        id="contact-form"
+        class="lg:col-span-3"
+        method="post"
+        action={contactEndpoint}
+        novalidate
+      >
+        <div class="grid gap-6 sm:grid-cols-2">
+          <div>
+            <label for="name" class="text-sm font-medium text-slate-900">Nume complet</label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              autocomplete="name"
+              required
+              class="focus-visible:border-brand-600 mt-2 w-full rounded-lg border border-slate-300 px-3.5 py-2.5 text-sm text-slate-900 placeholder:text-slate-400"
+            />
+          </div>
+          <div>
+            <label for="email" class="text-sm font-medium text-slate-900">Email</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              autocomplete="email"
+              required
+              class="focus-visible:border-brand-600 mt-2 w-full rounded-lg border border-slate-300 px-3.5 py-2.5 text-sm text-slate-900 placeholder:text-slate-400"
+            />
+          </div>
+        </div>
+
+        <div class="mt-6">
+          <label for="company" class="text-sm font-medium text-slate-900">
+            Companie <span class="font-normal text-slate-400">(opțional)</span>
+          </label>
+          <input
+            type="text"
+            id="company"
+            name="company"
+            autocomplete="organization"
+            class="focus-visible:border-brand-600 mt-2 w-full rounded-lg border border-slate-300 px-3.5 py-2.5 text-sm text-slate-900 placeholder:text-slate-400"
+          />
+        </div>
+
+        <div class="mt-6">
+          <label for="message" class="text-sm font-medium text-slate-900">Mesaj</label>
+          <textarea
+            id="message"
+            name="message"
+            rows="5"
+            required
+            class="focus-visible:border-brand-600 mt-2 w-full rounded-lg border border-slate-300 px-3.5 py-2.5 text-sm text-slate-900 placeholder:text-slate-400"
+          ></textarea>
+        </div>
+
+        <!-- Honeypot anti-spam — invizibil și inaccesibil pentru utilizatori reali. -->
+        <div class="hidden" aria-hidden="true">
+          <label for="website">Nu completa acest câmp</label>
+          <input type="text" id="website" name="website" tabindex="-1" autocomplete="off" />
+        </div>
+
+        <button
+          type="submit"
+          class="bg-brand-600 hover:bg-brand-700 focus-visible:outline-brand-600 mt-8 inline-flex items-center justify-center gap-2 rounded-full px-7 py-3.5 text-sm font-medium text-white transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 disabled:cursor-not-allowed disabled:opacity-60"
+        >
+          <span data-label>Trimite mesajul</span>
+        </button>
+
+        <p id="form-status" role="status" aria-live="polite" class="mt-4 text-sm"></p>
+      </form>
+
+      <div class="lg:col-span-2 lg:pl-6">
+        <ul class="space-y-5 text-sm text-slate-600">
+          <li class="flex items-start gap-3">
+            <Icon name="mapPin" class="text-brand-600 mt-0.5 size-5 shrink-0" />
+            <span>{address.streetAddress}<br />{address.locality}, {address.region}, România</span>
+          </li>
+          <li class="flex items-center gap-3">
+            <Icon name="phone" class="text-brand-600 size-5 shrink-0" />
+            <a href={`tel:${siteConfig.contact.phoneHref}`} class="hover:text-brand-700"
+              >{siteConfig.contact.phone}</a
+            >
+          </li>
+          <li class="flex items-center gap-3">
+            <Icon name="mail" class="text-brand-600 size-5 shrink-0" />
+            <a href={`mailto:${siteConfig.contact.email}`} class="hover:text-brand-700"
+              >{siteConfig.contact.email}</a
+            >
+          </li>
+        </ul>
+      </div>
+    </div>
+  </Container>
+</section>
+
+<script>
+  const form = document.getElementById("contact-form") as HTMLFormElement | null;
+  const status = document.getElementById("form-status");
+
+  form?.addEventListener("submit", async (event) => {
+    event.preventDefault();
+    if (!status) return;
+
+    const submitButton = form.querySelector('button[type="submit"]') as HTMLButtonElement;
+    const label = submitButton.querySelector("[data-label]");
+    const originalLabel = label?.textContent ?? "Trimite mesajul";
+
+    submitButton.disabled = true;
+    if (label) label.textContent = "Se trimite…";
+    status.textContent = "";
+    status.className = "mt-4 text-sm";
+
+    try {
+      const response = await fetch(form.action, {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify(Object.fromEntries(new FormData(form))),
+      });
+
+      if (!response.ok) throw new Error("request-failed");
+
+      status.textContent = "Mulțumim! Mesajul a fost trimis — revenim în maximum o zi lucrătoare.";
+      status.className = "mt-4 text-sm text-green-700";
+      form.reset();
+    } catch {
+      status.textContent =
+        "A apărut o eroare la trimitere. Încearcă din nou sau scrie-ne direct pe email.";
+      status.className = "mt-4 text-sm text-red-700";
+    } finally {
+      submitButton.disabled = false;
+      if (label) label.textContent = originalLabel;
+    }
+  });
+</script>

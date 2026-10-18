@@ -1,0 +1,67 @@
+---
+import BaseLayout from "@layouts/BaseLayout.astro";
+import Container from "@components/ui/Container.astro";
+import SectionHeading from "@components/ui/SectionHeading.astro";
+import Team from "@components/sections/Team.astro";
+import Cta from "@components/sections/Cta.astro";
+import { siteConfig } from "@data/site.config";
+---
+
+<BaseLayout
+  title="Despre noi"
+  description={`Povestea și principiile ${siteConfig.companyName} — firmă de consultanță de business fondată în ${siteConfig.foundedYear}.`}
+>
+  <section class="py-20 sm:py-28">
+    <Container>
+      <SectionHeading
+        eyebrow="Despre noi"
+        title={`${new Date().getFullYear() - siteConfig.foundedYear} ani de consultanță aplicată, nu doar de rapoarte`}
+      />
+      <div class="mt-8 grid gap-12 lg:grid-cols-3">
+        <div class="space-y-5 text-slate-600 lg:col-span-2">
+          <p>
+            {siteConfig.companyName} a fost fondată în {siteConfig.foundedYear} din convingerea că cele
+            mai multe firme de consultanță livrează recomandări corecte pe hârtie, dar fără să rămână
+            alături de client în implementare — iar acolo se pierde de fapt valoarea.
+          </p>
+          <p>
+            Lucrăm cu echipe de conducere din companii mijlocii din România și Europa Centrală, în
+            patru arii: strategie de business, consultanță financiară, transformare digitală și
+            optimizare operațională. Fiecare proiect are un obiectiv măsurabil stabilit de la
+            început — și raportăm progresul față de el, nu față de un plan generic.
+          </p>
+          <p>
+            Echipa noastră vine din interiorul industriilor pe care le consiliem: foști directori
+            financiari, de operațiuni și de digitalizare, nu doar consultanți de carieră. E
+            diferența dintre "ce ar trebui să faceți" și "iată cum am făcut-o și noi".
+          </p>
+        </div>
+        <div class="rounded-(--radius-card) bg-slate-50 p-8 ring-1 ring-slate-100">
+          <h2 class="text-lg font-semibold text-slate-900">Cum lucrăm</h2>
+          <ul class="mt-5 space-y-4 text-sm text-slate-600">
+            <li>
+              <p class="font-medium text-slate-900">Diagnostic înainte de recomandare</p>
+              <p class="mt-1">Nu propunem soluții standard înainte să înțelegem cifrele reale.</p>
+            </li>
+            <li>
+              <p class="font-medium text-slate-900">Obiective măsurabile</p>
+              <p class="mt-1">Fiecare proiect are 2-4 indicatori clari, urmăriți lunar.</p>
+            </li>
+            <li>
+              <p class="font-medium text-slate-900">Implicare în implementare</p>
+              <p class="mt-1">Rămânem alături de echipa clientului, nu predăm doar un raport.</p>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </Container>
+  </section>
+
+  <Team />
+
+  <Cta
+    title="Vrei să discutăm despre situația companiei tale?"
+    buttonLabel="Contactează-ne"
+    buttonHref="/contact"
+  />
+</BaseLayout>

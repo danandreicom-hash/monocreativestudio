@@ -1,0 +1,47 @@
+---
+import { getCollection, render } from "astro:content";
+import BaseLayout from "@layouts/BaseLayout.astro";
+import Container from "@components/ui/Container.astro";
+import Icon from "@components/icons/Icon.astro";
+import Cta from "@components/sections/Cta.astro";
+
+export async function getStaticPaths() {
+  const services = await getCollection("services");
+  return services.map((service) => ({
+    params: { slug: service.id },
+    props: { service },
+  }));
+}
+
+const { service } = Astro.props;
+const { Content } = await render(service);
+---
+
+<BaseLayout title={service.data.title} description={service.data.shortDescription}>
+  <article class="py-16 sm:py-24">
+    <Container class="max-w-3xl">
+      <a href="/servicii" class="text-brand-600 hover:text-brand-700 text-sm font-medium"
+        >← Toate serviciile</a
+      >
+      <div
+        class="bg-brand-50 text-brand-600 mt-6 flex size-12 items-center justify-center rounded-xl"
+      >
+        <Icon name={service.data.icon} class="size-6" />
+      </div>
+      <h1 class="mt-5 text-4xl">{service.data.title}</h1>
+      <p class="mt-4 text-lg text-slate-600">{service.data.shortDescription}</p>
+
+      <div
+        class="prose prose-slate prose-headings:font-display prose-h2:text-2xl prose-a:text-brand-600 mt-10 max-w-none"
+      >
+        <Content />
+      </div>
+    </Container>
+  </article>
+
+  <Cta
+    title="Vrei să discutăm acest serviciu aplicat la compania ta?"
+    buttonLabel="Programează o discuție"
+    buttonHref="/contact"
+  />
+</BaseLayout>

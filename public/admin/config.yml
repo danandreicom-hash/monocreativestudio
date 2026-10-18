@@ -1,0 +1,127 @@
+# ═══════════════════════════════════════════════════════════════════════
+# Configurația panoului de conținut (Decap CMS) — vezi README § Panoul de
+# conținut pentru pașii de configurare (o singură dată, la nivel CCI).
+#
+# La clonarea boilerplate-ului pentru un client nou, singurul lucru de
+# schimbat AICI e `repo:` de mai jos (restul — proxy-ul OAuth, colecțiile —
+# rămân identice, pentru că mapează structura fixă a boilerplate-ului).
+# ═══════════════════════════════════════════════════════════════════════
+backend:
+  name: github
+  repo: danandreicom-hash/you-on-the-com # schimbă la clonare: owner/nume-repo
+  branch: main
+  base_url: https://you-on-the-com-cms-oauth.danandrei-com.workers.dev
+  auth_endpoint: /auth
+
+# Editorii publică direct pe `main` — site-ul e rebuildat/redeployat manual
+# (`npm run deploy`) sau printr-un workflow CI conectat la acest repo.
+publish_mode: simple
+
+media_folder: src/assets/uploads
+public_folder: /src/assets/uploads
+
+collections:
+  - name: "services"
+    label: "Servicii"
+    folder: "src/content/services"
+    create: true
+    slug: "{{slug}}"
+    extension: "md"
+    format: "frontmatter"
+    fields:
+      - { label: "Titlu", name: "title", widget: "string" }
+      - { label: "Descriere scurtă (max. 200 caractere)", name: "shortDescription", widget: "text" }
+      - {
+          label: "Iconiță",
+          name: "icon",
+          widget: "select",
+          options: ["strategy", "finance", "digital", "operations", "people", "growth"],
+        }
+      - { label: "Ordine afișare", name: "order", widget: "number", default: 0, value_type: "int" }
+      - {
+          label: "Recomandat (apare pe pagina principală)",
+          name: "featured",
+          widget: "boolean",
+          default: false,
+        }
+      - { label: "Conținut complet", name: "body", widget: "markdown" }
+
+  - name: "case-studies"
+    label: "Studii de caz"
+    folder: "src/content/case-studies"
+    create: true
+    slug: "{{slug}}"
+    extension: "md"
+    format: "frontmatter"
+    fields:
+      - { label: "Titlu", name: "title", widget: "string" }
+      - { label: "Client", name: "client", widget: "string" }
+      - { label: "Industrie", name: "industry", widget: "string" }
+      - { label: "Rezumat (max. 280 caractere)", name: "summary", widget: "text" }
+      - {
+          label: "Imagine copertă",
+          name: "coverImage",
+          widget: "image",
+          media_folder: "/src/assets/case-studies",
+          public_folder: "../../assets/case-studies",
+        }
+      - {
+          label: "Text alternativ imagine (accesibilitate)",
+          name: "coverImageAlt",
+          widget: "string",
+        }
+      - {
+          label: "Rezultate (1-4)",
+          name: "results",
+          widget: "list",
+          min: 1,
+          max: 4,
+          fields:
+            [
+              { label: "Etichetă", name: "label", widget: "string" },
+              { label: "Valoare", name: "value", widget: "string" },
+            ],
+        }
+      - { label: "Data publicării", name: "publishDate", widget: "datetime" }
+      - {
+          label: "Recomandat (apare pe pagina principală)",
+          name: "featured",
+          widget: "boolean",
+          default: false,
+        }
+      - { label: "Conținut complet", name: "body", widget: "markdown" }
+
+  - name: "team"
+    label: "Echipă"
+    folder: "src/content/team"
+    create: true
+    slug: "{{slug}}"
+    extension: "md"
+    format: "frontmatter"
+    fields:
+      - { label: "Nume", name: "name", widget: "string" }
+      - { label: "Rol", name: "role", widget: "string" }
+      - {
+          label: "Fotografie",
+          name: "photo",
+          widget: "image",
+          media_folder: "/src/assets/team",
+          public_folder: "../../assets/team",
+        }
+      - { label: "Link LinkedIn", name: "linkedinUrl", widget: "string", required: false }
+      - { label: "Ordine afișare", name: "order", widget: "number", default: 0, value_type: "int" }
+      - { label: "Bio scurtă", name: "body", widget: "markdown" }
+
+  - name: "testimonials"
+    label: "Testimoniale"
+    folder: "src/content/testimonials"
+    create: true
+    slug: "{{slug}}"
+    extension: "md"
+    format: "frontmatter"
+    fields:
+      - { label: "Citat", name: "quote", widget: "text" }
+      - { label: "Nume autor", name: "authorName", widget: "string" }
+      - { label: "Rol autor", name: "authorRole", widget: "string" }
+      - { label: "Companie", name: "company", widget: "string" }
+      - { label: "Ordine afișare", name: "order", widget: "number", default: 0, value_type: "int" }

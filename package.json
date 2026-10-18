@@ -1,0 +1,47 @@
+{
+  "name": "you-on-the-com",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Boilerplate Astro + Tailwind pentru siteuri corporate/B2B — Creative Corporation International, linia \"You on the .com\"",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro check && astro build",
+    "preview": "wrangler dev",
+    "deploy": "astro check && astro build && wrangler deploy",
+    "check": "astro check",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "lint": "eslint .",
+    "dev:contact-form": "wrangler dev --config workers/contact-form/wrangler.jsonc",
+    "deploy:contact-form": "wrangler deploy --config workers/contact-form/wrangler.jsonc",
+    "dev:cms-oauth": "wrangler dev --config workers/cms-oauth/wrangler.jsonc",
+    "deploy:cms-oauth": "wrangler deploy --config workers/cms-oauth/wrangler.jsonc"
+  },
+  "dependencies": {
+    "astro": "^7.1.3",
+    "@astrojs/mdx": "^7.0.3",
+    "@astrojs/sitemap": "^3.7.3",
+    "@tailwindcss/typography": "^0.5.20",
+    "@tailwindcss/vite": "^4.3.3",
+    "tailwindcss": "^4.3.3"
+  },
+  "devDependencies": {
+    "@astrojs/check": "^0.9.9",
+    "@cloudflare/workers-types": "^5.20260724.1",
+    "@eslint/js": "^10.0.1",
+    "eslint": "^10.8.0",
+    "eslint-plugin-astro": "^3.0.1",
+    "globals": "^17.7.0",
+    "prettier": "^3.9.6",
+    "prettier-plugin-astro": "^0.14.1",
+    "prettier-plugin-tailwindcss": "^0.8.1",
+    "typescript": "^6.0.3",
+    "typescript-eslint": "^8.65.0",
+    "wrangler": "^4.114.0"
+  },
+  "engines": {
+    "node": ">=22.12.0"
+  }
+}

@@ -1,0 +1,26 @@
+---
+import BaseLayout from "@layouts/BaseLayout.astro";
+import Services from "@components/sections/Services.astro";
+import Cta from "@components/sections/Cta.astro";
+import { siteConfig } from "@data/site.config";
+---
+
+<BaseLayout
+  title="Servicii"
+  description={`Serviciile de consultanță ${siteConfig.companyName}: strategie de business, consultanță financiară, transformare digitală, optimizare operațională, HR și scalare.`}
+>
+  <div class="pt-12">
+    <Services
+      title="Servicii de consultanță"
+      description="Șase arii de intervenție, alese în funcție de stadiul și nevoile companiei tale — de la strategie la implementare."
+      linkToDetail
+    />
+  </div>
+
+  <Cta
+    title="Nu știi de unde să începi?"
+    description="Într-o discuție de 30 de minute te ajutăm să identifici prioritatea corectă."
+    buttonLabel="Programează o discuție"
+    buttonHref="/contact"
+  />
+</BaseLayout>

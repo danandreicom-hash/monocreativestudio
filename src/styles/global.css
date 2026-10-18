@@ -1,0 +1,101 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+/* ═══════════════════════════════════════════════════════════════════════
+   DESIGN TOKENS — punctul unic de rebranding per client.
+   ═══════════════════════════════════════════════════════════════════════
+   Ca să rebrandezi un site clonat din acest boilerplate, schimbă DOAR
+   valorile hex de mai jos (culori) și/sau numele fonturilor din
+   astro.config.mjs (§ fonts). Nu trebuie atinsă nicio componentă —
+   toate folosesc clase Tailwind generate din acești tokeni
+   (ex. bg-brand-600, text-accent-500, font-display).
+
+   Cele două culori care contează sunt "brand" (culoarea principală de
+   identitate) și "accent" (culoare secundară, pentru evidențieri/CTA).
+   Fiecare are 11 nuanțe (50 → 950, deschis → închis) — genera-le rapid
+   cu un tool ca https://uicolors.app/create pornind de la culoarea de
+   brand a clientului și lipește rezultatul aici.
+   ═══════════════════════════════════════════════════════════════════════ */
+@theme {
+  /* Brand — culoarea principală (implicit: albastru corporate, neutru) */
+  --color-brand-50: #eff6ff;
+  --color-brand-100: #dbeafe;
+  --color-brand-200: #bfdbfe;
+  --color-brand-300: #93c5fd;
+  --color-brand-400: #60a5fa;
+  --color-brand-500: #3b82f6;
+  --color-brand-600: #2563eb;
+  --color-brand-700: #1d4ed8;
+  --color-brand-800: #1e40af;
+  --color-brand-900: #1e3a8a;
+  --color-brand-950: #172554;
+
+  /* Accent — culoare secundară, pentru CTA-uri și evidențieri (implicit: chihlimbar) */
+  --color-accent-50: #fffbeb;
+  --color-accent-100: #fef3c7;
+  --color-accent-200: #fde68a;
+  --color-accent-300: #fcd34d;
+  --color-accent-400: #fbbf24;
+  --color-accent-500: #f59e0b;
+  --color-accent-600: #d97706;
+  --color-accent-700: #b45309;
+  --color-accent-800: #92400e;
+  --color-accent-900: #78350f;
+  --color-accent-950: #451a03;
+
+  /* Tipografie — mapate peste fonturile auto-găzduite din astro.config.mjs */
+  --font-sans: "Inter", var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Fraunces", var(--font-fraunces), Georgia, serif;
+
+  /* Raze de colț și umbre — folosite consecvent pentru carduri/butoane */
+  --radius-card: 1rem;
+  --shadow-card: 0 1px 2px 0 rgb(15 23 42 / 0.04), 0 8px 24px -4px rgb(15 23 42 / 0.08);
+
+  /* Lățimea maximă standard a conținutului (vezi componenta Container.astro) */
+  --container-content: 80rem;
+
+  /* Durata animațiilor — respectă prefers-reduced-motion (vezi mai jos) */
+  --default-transition-duration: 200ms;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════
+   BASE — reset-uri minime și comportament implicit accesibil.
+   ═══════════════════════════════════════════════════════════════════════ */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    text-rendering: optimizeLegibility;
+  }
+
+  body {
+    @apply bg-white font-sans text-slate-700 antialiased;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply font-display font-semibold text-slate-900;
+  }
+
+  /* Stil de focus vizibil și consecvent — esențial pentru navigare de la tastatură. */
+  :focus-visible {
+    @apply outline-brand-600 outline-2 outline-offset-2;
+  }
+
+  /* Respectă preferința de mișcare redusă a utilizatorului (WCAG 2.3.3). */
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}

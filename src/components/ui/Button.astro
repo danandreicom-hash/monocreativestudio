@@ -1,0 +1,44 @@
+---
+/**
+ * Buton/link stilizat consecvent — folosește variant="primary" pentru
+ * acțiunea principală dintr-o secțiune (de regulă una singură per ecran)
+ * și variant="secondary" pentru acțiuni adiționale.
+ */
+interface Props {
+  href?: string;
+  variant?: "primary" | "secondary" | "ghost";
+  size?: "md" | "lg";
+  class?: string;
+  type?: "button" | "submit";
+}
+
+const { href, variant = "primary", size = "md", class: className, type = "button" } = Astro.props;
+
+const base =
+  "inline-flex items-center justify-center gap-2 rounded-full font-medium transition-colors duration-200 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-600 disabled:pointer-events-none disabled:opacity-50";
+
+const variants = {
+  primary: "bg-brand-600 text-white hover:bg-brand-700",
+  secondary: "bg-white text-brand-700 ring-1 ring-inset ring-slate-200 hover:bg-slate-50",
+  ghost: "text-brand-700 hover:bg-brand-50",
+};
+
+const sizes = {
+  md: "px-5 py-2.5 text-sm",
+  lg: "px-7 py-3.5 text-base",
+};
+
+const classes = [base, variants[variant], sizes[size], className];
+---
+
+{
+  href ? (
+    <a href={href} class:list={classes}>
+      <slot />
+    </a>
+  ) : (
+    <button type={type} class:list={classes}>
+      <slot />
+    </button>
+  )
+}

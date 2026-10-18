@@ -1,0 +1,14 @@
+---
+/**
+ * Link "Sari la conținut" — primul element focusabil de pe pagină.
+ * Invizibil vizual până când primește focus de la tastatură (Tab).
+ * Cerință WCAG 2.4.1 (Bypass Blocks).
+ */
+---
+
+<a
+  href="#main-content"
+  class="bg-brand-700 sr-only z-50 rounded-md px-4 py-2 text-white focus:not-sr-only focus:fixed focus:top-4 focus:left-4"
+>
+  Sari la conținut
+</a>
