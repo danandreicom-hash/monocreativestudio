@@ -1,9 +1,9 @@
 {
-  "name": "you-on-the-com",
+  "name": "monocreativestudio",
   "version": "0.1.0",
   "private": true,
   "type": "module",
-  "description": "Boilerplate Astro + Tailwind pentru siteuri corporate/B2B — Creative Corporation International, linia \"You on the .com\"",
+  "description": "MONO Creative Studio: website, Print Lab and online shop",
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",

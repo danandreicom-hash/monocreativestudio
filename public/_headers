@@ -25,9 +25,6 @@
 /_astro/*
   Cache-Control: public, max-age=31536000, immutable
 
-/favicon.svg
-  Cache-Control: public, max-age=604800
-
 # Panoul de conținut (Decap CMS) — încarcă un script extern (unpkg.com) și
 # folosește intern `eval`/`new Function` (nevoie reală a bundle-ului Decap,
 # nu ceva ce putem elimina din config), deci are nevoie de o CSP proprie, mai
@@ -38,5 +35,5 @@
 # scriere pe repo pot edita ceva, indiferent de CSP.
 /admin/*
   ! Content-Security-Policy
-  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-eval' https://unpkg.com; style-src 'self' 'unsafe-inline' https://unpkg.com; img-src 'self' data: https:; font-src 'self' data: https://unpkg.com; connect-src 'self' https://api.github.com https://*.githubusercontent.com https://you-on-the-com-cms-oauth.danandrei-com.workers.dev; frame-src 'self'; base-uri 'self'; form-action 'self'; object-src 'none'
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-eval' https://unpkg.com; style-src 'self' 'unsafe-inline' https://unpkg.com; img-src 'self' data: https:; font-src 'self' data: https://unpkg.com; connect-src 'self' https://api.github.com https://*.githubusercontent.com; frame-src 'self'; base-uri 'self'; form-action 'self'; object-src 'none'
   X-Robots-Tag: noindex, nofollow

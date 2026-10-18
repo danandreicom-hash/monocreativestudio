@@ -1,41 +1,13 @@
 ---
 import BaseLayout from "@layouts/BaseLayout.astro";
-import Hero from "@components/sections/Hero.astro";
-import Services from "@components/sections/Services.astro";
-import CaseStudies from "@components/sections/CaseStudies.astro";
-import Testimonials from "@components/sections/Testimonials.astro";
-import Cta from "@components/sections/Cta.astro";
+import Container from "@components/ui/Container.astro";
 import { siteConfig } from "@data/site.config";
 ---
 
-<BaseLayout title={siteConfig.companyName} description={siteConfig.defaultMetaDescription}>
-  <Hero
-    eyebrow="Consultanță de business"
-    title="Creștem companii, nu doar scriem rapoarte."
-    description={siteConfig.tagline}
-    primaryCta={{ label: "Discută cu noi", href: "/contact" }}
-    secondaryCta={{ label: "Vezi studiile de caz", href: "/portofoliu" }}
-    stats={[
-      {
-        value: `${new Date().getFullYear() - siteConfig.foundedYear}+`,
-        label: "ani de activitate",
-      },
-      { value: "80+", label: "proiecte finalizate" },
-      { value: "4,2M€", label: "refinanțare intermediată" },
-      { value: "18%", label: "economie medie de costuri" },
-    ]}
-  />
-
-  <Services featuredOnly linkToDetail />
-
-  <CaseStudies featuredOnly limit={3} />
-
-  <Testimonials />
-
-  <Cta
-    title="Hai să vedem unde pierzi cel mai mult din marjă."
-    description="O primă discuție de 30 de minute, fără obligații, în care identificăm împreună 2-3 direcții concrete de acțiune."
-    buttonLabel="Programează o discuție"
-    buttonHref="/contact"
-  />
+<BaseLayout title={siteConfig.companyName} description={siteConfig.defaultMetaDescription} noindex>
+  <Container class="flex min-h-[60vh] flex-col items-center justify-center py-24 text-center">
+    <h1 class="text-4xl sm:text-5xl">{siteConfig.companyName}</h1>
+    <p class="mt-4 text-stone-600">{siteConfig.tagline}</p>
+    <p class="mt-2 text-sm text-stone-500">Site in preparation.</p>
+  </Container>
 </BaseLayout>

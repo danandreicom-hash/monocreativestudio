@@ -1,16 +1,20 @@
 import type { APIRoute } from "astro";
 
-// Endpoint static, generat automat la build — trimite direct la sitemap-ul
-// produs de integrarea @astrojs/sitemap, fără să fie nevoie de întreținere
-// manuală per client (URL-ul e derivat din `site` din astro.config.mjs).
+// Fail-closed: crawlers are blocked unless the release build sets
+// PUBLIC_ALLOW_INDEXING=true (CC_WEBDEV.md).
 export const GET: APIRoute = ({ site }) => {
+  const allow = import.meta.env.PUBLIC_ALLOW_INDEXING === "true";
   const sitemapURL = new URL("sitemap-index.xml", site);
 
-  const body = `User-agent: *
+  const body = allow
+    ? `User-agent: *
 Allow: /
 Disallow: /api/
 
 Sitemap: ${sitemapURL}
+`
+    : `User-agent: *
+Disallow: /
 `;
 
   return new Response(body, {

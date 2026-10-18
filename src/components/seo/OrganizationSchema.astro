@@ -1,37 +1,18 @@
 ---
 /**
- * JSON-LD schema.org pentru firmă (tip ProfessionalService — potrivit
- * pentru agenții/consultanță B2B; schimbă `@type` în "LocalBusiness" sau
- * un subtip mai specific dacă natura clientului o cere).
- *
- * Se randează o singură dată, în BaseLayout.astro — nu-l duplica pe fiecare pagină.
+ * Minimal schema.org Organization: name and url only. Add address, phone,
+ * logo and sameAs only after Vladimir confirms them (D-002).
+ * Rendered once, in BaseLayout.astro.
  */
 import { siteConfig } from "@data/site.config";
 
-const { address, phone, email } = siteConfig.contact;
 const siteURL = Astro.site?.toString().replace(/\/$/, "");
 
 const schema = {
   "@context": "https://schema.org",
-  "@type": "ProfessionalService",
+  "@type": "Organization",
   name: siteConfig.companyName,
-  legalName: siteConfig.legalName,
-  description: siteConfig.defaultMetaDescription,
   url: siteURL,
-  logo: `${siteURL}/images/og-default.jpg`,
-  image: `${siteURL}/images/og-default.jpg`,
-  telephone: phone,
-  email,
-  foundingDate: String(siteConfig.foundedYear),
-  address: {
-    "@type": "PostalAddress",
-    streetAddress: address.streetAddress,
-    addressLocality: address.locality,
-    addressRegion: address.region,
-    postalCode: address.postalCode,
-    addressCountry: address.country,
-  },
-  sameAs: Object.values(siteConfig.social),
 };
 ---
 
