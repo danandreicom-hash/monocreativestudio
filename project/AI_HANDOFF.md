@@ -15,7 +15,7 @@
 
 ## Tasks
 
-- TASK-001 bootstrap cleanup: IMPLEMENTED and merged to main (a998fc8); awaiting Dan acceptance, then DONE
+- TASK-001 bootstrap cleanup: DONE (accepted by Dan, 2026-10-18; merged PR #1)
 - TASK-002 strategy and sitemap: DONE, G1 approved (D-008); Home copy v0.2 at G2; language RO+EN (D-009)
 - TASK-003 lab facts and Print Lab copy brief (G2): REVIEW, owner ChatGPT
 - TASK-004 Shopify architecture and edition model: IMPLEMENT, owner ChatGPT

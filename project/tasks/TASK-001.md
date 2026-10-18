@@ -1,6 +1,6 @@
 # TASK-001 — Bootstrap cleanup (MONO identity, no demo content)
 
-- Status: IMPLEMENT (set by Dan, 2026-10-18)
+- Status: DONE (accepted by Dan, 2026-10-18)
 - Owner / branch: CLAUDE / `claude/TASK-001`
 - Goal: turn the master copy into a clean MONO project: remove the demo content inherited from the master, neutral MONO identity, indexing off.
 - Authorized by: D-004; IMPLEMENT set by Dan, 2026-10-18.
