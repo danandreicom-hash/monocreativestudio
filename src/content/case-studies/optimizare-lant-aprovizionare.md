@@ -25,7 +25,7 @@ politicii de stoc pe fiecare depozit.
 
 ## Ce am făcut
 
-Echipa Altura a pornit cu o analiză completă a fluxurilor de marfă pe ultimele 18 luni: costuri
+Echipa a pornit cu o analiză completă a fluxurilor de marfă pe ultimele 18 luni: costuri
 de transport pe rută, niveluri de stoc pe categorie de produs și rata de rupere de stoc pe
 fiecare depozit regional.
 

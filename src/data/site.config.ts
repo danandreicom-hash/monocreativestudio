@@ -9,18 +9,18 @@
  */
 
 export const siteConfig = {
-  companyName: "Altura Consulting",
-  legalName: "Altura Consulting SRL",
+  companyName: "Company Name",
+  legalName: "Company Name SRL",
   tagline: "Strategie, finanțe și transformare digitală pentru companii care vor să crească.",
 
   // Folosit ca fallback pentru title tag și meta description acolo unde
   // o pagină nu-și definește propriile valori (vezi src/components/seo/Seo.astro).
   defaultMetaDescription:
-    "Altura Consulting este o firmă de consultanță de business din România, specializată " +
+    "Company Name este o firmă de consultanță de business din România, specializată " +
     "în strategie, consultanță financiară și transformare digitală pentru companii B2B.",
 
   contact: {
-    email: "contact@altura-consulting.example",
+    email: "contact@company-name.example",
     phone: "+40 21 300 4455",
     // Format E.164, pentru linkuri tel: din UI.
     phoneHref: "+40213004455",
@@ -34,8 +34,8 @@ export const siteConfig = {
   },
 
   social: {
-    linkedin: "https://www.linkedin.com/company/altura-consulting-example",
-    facebook: "https://www.facebook.com/alturaconsulting.example",
+    linkedin: "https://www.linkedin.com/company/company-name-example",
+    facebook: "https://www.facebook.com/companyname.example",
   },
 
   nav: [

@@ -2,7 +2,7 @@
 
 - Protocol version: 2.0 (CC WEBDEV, `CC_WEBDEV.md`)
 - Updated: 2026-10-18
-- Base: bootstrap from `you-on-the-com` master (CC WEBDEV v2.0, commit e1102f1). Demo content (Altura Consulting) is still in `src/`; TASK-001 removes it.
+- Base: bootstrap from `you-on-the-com` master (CC WEBDEV v2.0, commit e1102f1). Demo content inherited from the master is still in `src/`; TASK-001 removes it.
 - Overall: project pack created. Phase 1 = site + Print Lab + small Shopify shop. Nothing is implemented or published.
 
 ## Read order (every task)

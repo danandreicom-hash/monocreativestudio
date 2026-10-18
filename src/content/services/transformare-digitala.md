@@ -6,7 +6,7 @@ order: 3
 featured: true
 ---
 
-"Transformare digitală" a devenit un termen vag — la Altura îl reducem la ceva concret: procese
+"Transformare digitală" a devenit un termen vag — aici îl reducem la ceva concret: procese
 care astăzi rulează manual sau pe Excel și care pot fi digitalizate cu impact măsurabil în
 costuri, viteză sau experiența clientului.
 

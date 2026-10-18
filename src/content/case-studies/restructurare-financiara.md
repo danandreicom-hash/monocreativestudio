@@ -24,7 +24,7 @@ capital propriu, combinat cu întârzieri la încasările de la retaileri mari.
 
 ## Ce am făcut
 
-Echipa de consultanță financiară Altura a intervenit în regim de urgență:
+Echipa de consultanță financiară a intervenit în regim de urgență:
 
 - Am construit un model de cash-flow pe 13 săptămâni, oferind conducerii vizibilitate reală
   asupra lichidității pentru prima dată în acel an.

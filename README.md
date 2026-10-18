@@ -5,7 +5,7 @@ B2B), parte din linia de servicii **"You on the .com"** a **Creative Corporation
 (CCI)**. Se clonează per client și se personalizează doar la conținut și culori — structura de
 cod rămâne neatinsă.
 
-Conținutul din acest repo (Altura Consulting, servicii, studii de caz, echipă) e **demo/test**,
+Conținutul din acest repo (firma fictivă, servicii, studii de caz, echipă) e **demo/test**,
 o firmă fictivă de consultanță de business — înlocuiește-l cu conținutul real al clientului.
 
 > **Reguli de lucru: [`CC_WEBDEV.md`](CC_WEBDEV.md)** — metoda unică (v2.0) pentru Dan, ChatGPT și Claude Code. Înlocuiește orice reguli webdev anterioare.

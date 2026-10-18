@@ -323,7 +323,7 @@ Citește CLAUDE.md, apoi project/AI_HANDOFF.md, project/TASK_LOCKS.md și fișie
 ## 12. Bootstrap pentru un proiect client nou
 
 1. Creează repo-ul clientului din `you-on-the-com` (privat). Nu transforma niciodată master-ul într-un proiect de client.
-2. Alege tier-ul (§5) și păstrează doar fișierele lui; șterge conținutul demo (Altura Consulting) și datele din `site.config.ts`.
+2. Alege tier-ul (§5) și păstrează doar fișierele lui; șterge conținutul demo (firma fictivă demo) și datele din `site.config.ts`.
 3. Completează `00_PROJECT.md` (brief) și înregistrează decizia de tier în `06_DECISIONS.md` sau în handoff.
 4. Setează în `astro.config.mjs` / `.env`: `PUBLIC_SITE_URL`; lasă `PUBLIC_ALLOW_INDEXING` nesetat până la G4.
 5. Înlocuiește identitatea moștenită (nume proiect în `wrangler.jsonc`, `config.yml` din CMS, date de organizație).
