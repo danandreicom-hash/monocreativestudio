@@ -1,7 +1,7 @@
 {
   "$schema": "node_modules/wrangler/config-schema.json",
-  // Schimbă "name" la un identificator unic per client (ex. "acme-corp-site").
-  "name": "you-on-the-com",
+  // Worker name for this project.
+  "name": "monocreativestudio",
   "compatibility_date": "2026-07-01",
 
   // Site 100% static — Cloudflare servește fișierele din dist/ direct, fără

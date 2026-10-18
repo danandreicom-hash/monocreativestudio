@@ -18,32 +18,34 @@ interface Props {
 const {
   title,
   description = siteConfig.defaultMetaDescription,
-  image = "/images/og-default.jpg",
+  image,
   type = "website",
   noindex = false,
 } = Astro.props;
 
 const pageTitle = title === siteConfig.companyName ? title : `${title} · ${siteConfig.companyName}`;
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
-const imageURL = new URL(image, Astro.site);
+const imageURL = image ? new URL(image, Astro.site) : undefined;
+// Fail-closed: indexing only when the release build sets PUBLIC_ALLOW_INDEXING=true.
+const blockIndexing = noindex || import.meta.env.PUBLIC_ALLOW_INDEXING !== "true";
 ---
 
 <title>{pageTitle}</title>
 <meta name="description" content={description} />
 <link rel="canonical" href={canonicalURL} />
-{noindex && <meta name="robots" content="noindex, nofollow" />}
+{blockIndexing && <meta name="robots" content="noindex, nofollow" />}
 
 <!-- Open Graph -->
 <meta property="og:type" content={type} />
 <meta property="og:title" content={pageTitle} />
 <meta property="og:description" content={description} />
 <meta property="og:url" content={canonicalURL} />
-<meta property="og:image" content={imageURL} />
+{imageURL && <meta property="og:image" content={imageURL} />}
 <meta property="og:site_name" content={siteConfig.companyName} />
-<meta property="og:locale" content="ro_RO" />
+<meta property="og:locale" content="en_US" />
 
 <!-- Twitter Card -->
-<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:card" content={imageURL ? "summary_large_image" : "summary"} />
 <meta name="twitter:title" content={pageTitle} />
 <meta name="twitter:description" content={description} />
-<meta name="twitter:image" content={imageURL} />
+{imageURL && <meta name="twitter:image" content={imageURL} />}

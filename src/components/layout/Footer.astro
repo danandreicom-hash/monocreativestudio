@@ -1,84 +1,28 @@
 ---
 import { siteConfig } from "@data/site.config";
 import Container from "@components/ui/Container.astro";
-import Icon from "@components/icons/Icon.astro";
 
 const year = new Date().getFullYear();
-const { address } = siteConfig.contact;
+const { email, phone } = siteConfig.contact;
 ---
 
-<footer class="border-t border-slate-100 bg-slate-50">
-  <Container class="grid gap-12 py-16 lg:grid-cols-4">
-    <div class="lg:col-span-2">
-      <p class="font-display text-lg font-semibold text-slate-900">{siteConfig.companyName}</p>
-      <p class="mt-3 max-w-sm text-sm text-slate-600">{siteConfig.tagline}</p>
-      <div class="mt-5 flex gap-3">
-        <a
-          href={siteConfig.social.linkedin}
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label={`${siteConfig.companyName} pe LinkedIn`}
-          class="hover:text-brand-700 flex size-9 items-center justify-center rounded-full bg-white text-slate-600 ring-1 ring-slate-200 transition-colors"
-        >
-          <Icon name="linkedin" class="size-4" />
-        </a>
-      </div>
-    </div>
-
-    <nav aria-label="Navigare footer">
-      <h2 class="text-sm font-semibold text-slate-900">Navigare</h2>
-      <ul class="mt-4 space-y-2.5">
-        {
-          siteConfig.nav.map((item) => (
+<footer class="border-t border-stone-200 bg-stone-50">
+  <Container class="flex flex-col gap-3 py-10 text-sm text-stone-600">
+    <p class="font-display text-lg font-semibold text-stone-900">{siteConfig.companyName}</p>
+    <p>{siteConfig.tagline}</p>
+    {email && <a href={`mailto:${email}`}>{email}</a>}
+    {phone && <a href={`tel:${phone.replace(/\s/g, "")}`}>{phone}</a>}
+    {
+      siteConfig.footerLinks.length > 0 && (
+        <ul class="flex gap-5">
+          {siteConfig.footerLinks.map((link) => (
             <li>
-              <a href={item.href} class="hover:text-brand-700 text-sm text-slate-600">
-                {item.label}
-              </a>
+              <a href={link.href}>{link.label}</a>
             </li>
-          ))
-        }
-      </ul>
-    </nav>
-
-    <div>
-      <h2 class="text-sm font-semibold text-slate-900">Contact</h2>
-      <ul class="mt-4 space-y-3 text-sm text-slate-600">
-        <li class="flex items-start gap-2">
-          <Icon name="mapPin" class="mt-0.5 size-4 shrink-0 text-slate-400" />
-          <span>{address.streetAddress}, {address.locality}, {address.region}</span>
-        </li>
-        <li class="flex items-center gap-2">
-          <Icon name="phone" class="size-4 shrink-0 text-slate-400" />
-          <a href={`tel:${siteConfig.contact.phoneHref}`} class="hover:text-brand-700"
-            >{siteConfig.contact.phone}</a
-          >
-        </li>
-        <li class="flex items-center gap-2">
-          <Icon name="mail" class="size-4 shrink-0 text-slate-400" />
-          <a href={`mailto:${siteConfig.contact.email}`} class="hover:text-brand-700"
-            >{siteConfig.contact.email}</a
-          >
-        </li>
-      </ul>
-    </div>
+          ))}
+        </ul>
+      )
+    }
+    <p class="text-stone-500">© {year} {siteConfig.companyName}</p>
   </Container>
-
-  <div class="border-t border-slate-200">
-    <Container
-      class="flex flex-col gap-3 py-6 text-sm text-slate-500 sm:flex-row sm:items-center sm:justify-between"
-    >
-      <p>© {year}–prezent {siteConfig.legalName}. Toate drepturile rezervate.</p>
-      <ul class="flex gap-5">
-        {
-          siteConfig.footerLinks.map((link) => (
-            <li>
-              <a href={link.href} class="hover:text-brand-700">
-                {link.label}
-              </a>
-            </li>
-          ))
-        }
-      </ul>
-    </Container>
-  </div>
 </footer>
