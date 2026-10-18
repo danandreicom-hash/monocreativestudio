@@ -2,7 +2,7 @@
 
 - Protocol version: 2.0 (CC WEBDEV, `CC_WEBDEV.md`)
 - Updated: 2026-10-18
-- Base: bootstrap from `you-on-the-com` master (CC WEBDEV v2.0, commit e1102f1). TASK-001 is implemented on `claude/TASK-001` (a998fc8), PR pending.
+- Base: bootstrap from `you-on-the-com` master (CC WEBDEV v2.0, commit e1102f1). TASK-001 (demo removed, MONO placeholder) is merged to main.
 - Overall: project pack created. Phase 1 = site + Print Lab + small Shopify shop. Nothing is implemented or published.
 
 ## Read order (every task)
@@ -15,7 +15,7 @@
 
 ## Tasks
 
-- TASK-001 bootstrap cleanup: IMPLEMENTED on `claude/TASK-001`, awaiting Dan merge; lock still Claude
+- TASK-001 bootstrap cleanup: IMPLEMENTED and merged to main (a998fc8); awaiting Dan acceptance, then DONE
 - TASK-002 strategy and sitemap: DONE, G1 approved (D-008); Home copy v0.2 at G2; language RO+EN (D-009)
 - TASK-003 lab facts and Print Lab copy brief (G2): REVIEW, owner ChatGPT
 - TASK-004 Shopify architecture and edition model: IMPLEMENT, owner ChatGPT
@@ -35,5 +35,5 @@
 
 ## Next
 
-- Dan: send `project/questions-for-vladimir.md` to Vladimir; merge TASK-001; decide D-006 and D-007.
+- Dan: send `project/questions-for-vladimir.md` to Vladimir; decide D-006 and D-007.
 - ChatGPT: TASK-003 starts when Vladimir answers; TASK-004 and TASK-005 can start from the G1 baseline.
