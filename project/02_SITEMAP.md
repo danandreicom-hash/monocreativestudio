@@ -1,61 +1,60 @@
 # Sitemap and Journeys — MONO Creative Studio
 
-- Version: 0.1
-- Status: DRAFT (input for TASK-002; Dan approves at gate G1)
-- Prepared by: Claude, 2026-10-18, from section 3 to 7 of `project/source/strategy-draft-2026-10.md`, simplified for phase 1 (D-003)
+- Version: 0.2; Status: REVIEW — TASK-002, G1 approval by Dan Andrei pending.
+- Refined by: CODEX, 2026-10-18, from Claude's v0.1; URLs and content contracts, not implementation approval.
 
-## Principles
+## Principles, header and footer
 
-- One canonical header and footer on every route; two registers of language, not two sites.
-- Primary header navigation has five items; "Request a quote" is a persistent secondary button.
-- Search, account and filters by theme or size wait until the catalogue is large enough to need them.
+One site, one header/footer, two language registers. Proposed header: Shop, Print Lab, About, Journal, Contact; Cart utility; persistent “Request a quote”. Journal appears only when launch content exists. Samples, materials and audience pages sit under Print Lab; do not populate the header with unready pages.
 
-## Header and footer
+Footer: Shop, Print Lab, confirmed Materials / Samples pages, Request a quote, Contact, Shipping and returns, Privacy, Terms, Cookies as applicable. Owner: Vladimir Andrei; legal entity and contact details `[to confirm]`. No empty destination or disabled purchase button presented as an available service.
 
-Header: Shop, Print Lab, About, Journal, Contact, Cart, "Request a quote".
-Footer: Shop, Print Lab, Materials, Samples, Request a quote, Shipping and returns, Privacy, Terms, Cookies, Contact, owner and legal entity `[to confirm]`.
+## Phase 1 route contracts
 
-## Phase 1 routes
+Routes below use the working EN-only scheme. “Conditional” means within the proposed phase 1 structure but hidden until its content and operational prerequisites are met, not a fabricated offer.
 
-| Route                                                     | Zone  | Purpose                                                            | Primary CTA         |
-| --------------------------------------------------------- | ----- | ------------------------------------------------------------------ | ------------------- |
-| `/`                                                       | Both  | Two paths: Shop and Print Lab; why MONO; for professionals         | Shop / Print Lab    |
-| `/shop`                                                   | Shop  | Collection grid, edition status (open / limited)                   | View work           |
-| `/shop/[product]`                                         | Shop  | Product page: size, presentation, edition counter, details tabs    | Add to cart         |
-| `/shop/limited-editions`                                  | Shop  | Filtered collection                                                | View work           |
-| `/shop/artists` and `/shop/artists/[artist]`              | Shop  | Added when at least three artists are live                         | View work           |
-| `/cart` (Shopify checkout)                                | Shop  | Cart; checkout is hosted by Shopify                                | Checkout            |
-| `/print-lab`                                              | Lab   | Hub: audiences, materials, how it works                            | Request a quote     |
-| `/print-lab/artists`                                      | Lab   | Editions, colour control, files, quote form                        | Send your files     |
-| `/print-lab/designers`                                    | Lab   | Custom sizes, framing, interior projects                           | Request a quote     |
-| `/print-lab/b2b`                                          | Lab   | Volume tiers `[to confirm]`, invoicing, packaging                  | Request a quote     |
-| `/print-lab/materials`                                    | Lab   | Papers and finishes table from confirmed lab facts                 | Order a sample pack |
-| `/print-lab/samples`                                      | Lab   | Sample pack, fixed price `[to confirm]`                            | Order a sample pack |
-| `/print-lab/framing`                                      | Lab   | Framing options, only if offered `[to confirm]`                    | Request a quote     |
-| `/request-a-quote`                                        | Both  | One form: "I am ordering as" Artist, Designer, Business, Collector | Send request        |
-| `/about`, `/about/process`                                | Both  | Studio, owner, process, quality standards                          | Request a quote     |
-| `/journal`, `/journal/[slug]`                             | Both  | Articles on paper, printing, editions (from phase 1 or soon after) | Subscribe / Contact |
-| `/contact`                                                | Both  | Address, hours, form                                               | Send message        |
-| `/shipping-and-returns`, `/privacy`, `/terms`, `/cookies` | Legal | Made-to-order terms, data processing                               | —                   |
+| URL                                                       | Purpose / prerequisite                                                                                        | Primary CTA                              |
+| --------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------- | ---------------------------------------- |
+| `/`                                                       | Two paths, evidence, real works, professional entry, contact                                                  | Shop prints / Print Lab                  |
+| `/shop`                                                   | Small catalogue of purchasable works with rights, artist and actual price                                     | View work                                |
+| `/shop/[product]`                                         | Artwork, artist, real variants/prices, availability, materials and delivery; edition data only if approved    | Add to cart                              |
+| `/cart`                                                   | Proposed logical cart destination; implementation and Shopify checkout handoff in TASK-004                    | Checkout                                 |
+| `/print-lab`                                              | Audience entry, confirmed capabilities, enquiry process                                                       | Request a quote                          |
+| `/print-lab/artists`                                      | Artists and photographers; edition/proofing services `[to confirm]`                                           | Request a quote                          |
+| `/print-lab/designers`                                    | Designers and agencies; formats/framing `[to confirm]`                                                        | Request a quote                          |
+| `/print-lab/b2b`                                          | Business project enquiries; volume terms and packaging `[to confirm]`                                         | Request a quote                          |
+| `/print-lab/materials`                                    | Conditional: confirmed papers, sizes and finishes from TASK-003                                               | Request a quote                          |
+| `/print-lab/samples`                                      | Conditional: contents, price, stock and delivery `[to confirm]`                                               | Order a sample pack, only when orderable |
+| `/request-a-quote`                                        | One enquiry form; role and project brief; no upload/configurator                                              | Send request                             |
+| `/about`                                                  | Studio, Vladimir's ownership, confirmed process and permitted images                                          | Contact the studio                       |
+| `/journal`, `/journal/[slug]`                             | Conditional: approved original articles, no newsletter dependency                                             | Read article / Contact                   |
+| `/contact`                                                | Confirmed contact channels; address and hours `[to confirm]`                                                  | Send message                             |
+| `/shipping-and-returns`, `/privacy`, `/terms`, `/cookies` | Appropriate legal content; entity, shipping and returns `[to confirm]`; cookie content matched to actual site | Relevant contact link                    |
 
-Not in phase 1: customer accounts beyond Shopify defaults, print-upload configurator, white-label portal, search.
+Shop is in phase 1 (D-003); language, facts and catalogue/legal readiness must be resolved before launch. Do not publish a purchase path until it can complete a real order. Checkout stays Shopify-hosted; backend choice, cart route ownership and paid-plan approval remain with TASK-004 / D-006 / D-007.
 
-## Journeys
+## Conditional expansion from v0.1
 
-1. **Artist:** Home, Print Lab, Materials, Sample pack, Quote form, reply from a person.
-2. **Designer or company:** Home, Print Lab B2B, Quote form with project details, reply with a quote.
-3. **Collector:** Home, Shop, Product, Cart, Shopify checkout, confirmation, certificate if the edition model applies.
+Retain `/shop/limited-editions` only with approved limited products; `/shop/artists` and `/shop/artists/[artist]` when at least three artists have approved biographies and works. `/print-lab/framing` requires a confirmed framing offer. `/about/process` requires enough confirmed process content to warrant its own page; otherwise keep it on About. None needs an empty launch page. Catalogue filters, search, accounts beyond Shopify defaults, upload configurator, marketplace, white-label portal and automated fulfillment remain outside this phase.
 
-## Cross-cutting
+## Journeys and enquiry contract
 
-- Request a quote and Sample pack are reachable from both zones.
-- Materials and quality page is shared; every figure comes from `project/lab-facts.md`.
-- Each page: one H1, unique title and description, canonical URL, social image; site stays `noindex` until gate G4.
+1. Artist: Home → Print Lab → confirmed Materials / Samples if ready → Quote → human response. Collect requirements first; file transfer and proofing `[to confirm]` are arranged separately.
+2. Designer/business: Home → Designers or B2B → Quote → human response. Ask for intended use, quantity, dimensions and desired date as requests, not supported specifications or delivery promises.
+3. Collector: Home → Shop → Product → Cart → Shopify checkout → order confirmation. Show certificates only under an approved edition model; link to the lab for project quantities without promising discounts.
+
+Quote form proposal: role (Artist / Designer / Business / Collector), name, email, project brief; optional quantity, dimensions and desired date. Clear validation, receipt/error state and relevant privacy notice. Delivery channel, retention and response time `[to confirm]`; no new provider or storage is authorized.
+
+## RO/EN and cross-cutting specification
+
+Recommendation, pending Dan: `/ro/` and `/en/`, with matching logical paths (`/ro/print-lab`, `/en/print-lab`) and translated interface/content. Bare `/` directs to the approved default language; do not decide that default automatically. If EN only is approved, use the unprefixed table above. Language switching preserves the equivalent page; do not expose untranslated duplicates. Checkout language constraints belong to TASK-004.
+
+Each indexable page needs one H1, unique title/description, canonical and social image with rights. Bilingual release adds reciprocal language references. Exclude cart and form-result states from indexing; site stays noindex until G4. Sample and quote links work across both zones. Design tokens stay in TASK-005; this document specifies hierarchy and behaviour only.
 
 ## Open Questions
 
-1. Is `/request-a-quote` a page, a Shopify form or a Worker-delivered form (cost approval D-006)?
-2. Is the Journal live at launch, or after the first six weeks?
-3. Does the shop use Shopify's cart page or an Astro cart that hands off to checkout (TASK-004)?
-4. Which RO or EN routes exist if the site is bilingual (`/ro/...`)?
-5. Framing: offered at launch, or Print Lab only on request?
+1. Which language scheme and default language does Dan approve?
+2. Which lab pages, sample purchase flow and Journal articles are ready for launch?
+3. Who owns cart routes and checkout language behaviour (TASK-004)?
+4. Which quote delivery channel, privacy terms and response expectation are approved?
+5. Which legal entity, shipping zones and returns terms apply to the first orders?
