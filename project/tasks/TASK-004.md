@@ -1,6 +1,6 @@
 # TASK-004 — Shopify architecture and edition model
 
-- Status: REVIEW (becomes IMPLEMENT when Dan sets it)
+- Status: IMPLEMENT (set by Dan, 2026-10-18)
 - Owner / branch: CODEX / `codex/TASK-004`
 - Goal: specify how the small shop works, so Claude Code can implement it later.
 - Authorized by: D-003, D-006, D-007.

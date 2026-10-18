@@ -18,7 +18,7 @@
 - TASK-001 bootstrap cleanup: IMPLEMENTED on `claude/TASK-001`, awaiting Dan merge; lock still Claude
 - TASK-002 strategy and sitemap: DONE, G1 approved (D-008); Home copy v0.2 at G2; language RO+EN (D-009)
 - TASK-003 lab facts and Print Lab copy brief (G2): REVIEW, owner ChatGPT
-- TASK-004 Shopify architecture and edition model: REVIEW, owner ChatGPT
+- TASK-004 Shopify architecture and edition model: IMPLEMENT, owner ChatGPT
 - TASK-005 visual direction brief for Claude Design (G3): REVIEW, owner ChatGPT
 
 ## Blockers (all need a decision from Dan or Vladimir)
