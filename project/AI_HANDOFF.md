@@ -2,7 +2,7 @@
 
 - Protocol version: 2.0 (CC WEBDEV, `CC_WEBDEV.md`)
 - Updated: 2026-10-18
-- Base: bootstrap from `you-on-the-com` master (CC WEBDEV v2.0, commit e1102f1). Demo content inherited from the master is still in `src/`; TASK-001 removes it.
+- Base: bootstrap from `you-on-the-com` master (CC WEBDEV v2.0, commit e1102f1). TASK-001 is implemented on `claude/TASK-001` (a998fc8), PR pending.
 - Overall: project pack created. Phase 1 = site + Print Lab + small Shopify shop. Nothing is implemented or published.
 
 ## Read order (every task)
@@ -15,15 +15,15 @@
 
 ## Tasks
 
-- TASK-001 bootstrap cleanup (remove demo, MONO identity, noindex): IMPLEMENT, owner Claude
-- TASK-002 strategy and sitemap (G1): IMPLEMENT, owner ChatGPT; Claude drafts v0.1 of 01, 02 and 04 exist as input
+- TASK-001 bootstrap cleanup: IMPLEMENTED on `claude/TASK-001`, awaiting Dan merge; lock still Claude
+- TASK-002 strategy and sitemap: DONE, G1 approved (D-008); Home copy v0.2 at G2; language RO+EN (D-009)
 - TASK-003 lab facts and Print Lab copy brief (G2): REVIEW, owner ChatGPT
 - TASK-004 Shopify architecture and edition model: REVIEW, owner ChatGPT
 - TASK-005 visual direction brief for Claude Design (G3): REVIEW, owner ChatGPT
 
 ## Blockers (all need a decision from Dan or Vladimir)
 
-- Open questions 1 to 7 in `project/00_PROJECT.md`.
+- Open questions 1 to 7 in `project/00_PROJECT.md` (question 1, language, is closed by D-009).
 - D-006 and D-007 are in REVIEW.
 
 ## Standing rules
@@ -35,5 +35,5 @@
 
 ## Next
 
-- Dan: send `project/questions-for-vladimir.md` to Vladimir; start ChatGPT on TASK-002.
-- ChatGPT: start with TASK-002 in a new thread, using the startup prompt in `CC_WEBDEV.md` section 11.
+- Dan: send `project/questions-for-vladimir.md` to Vladimir; merge TASK-001; decide D-006 and D-007.
+- ChatGPT: TASK-003 starts when Vladimir answers; TASK-004 and TASK-005 can start from the G1 baseline.

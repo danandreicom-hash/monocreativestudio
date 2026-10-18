@@ -1,6 +1,6 @@
 # Strategy — MONO Creative Studio
 
-- Version: 0.2; Status: REVIEW — TASK-002, G1 approval by Dan Andrei pending.
+- Version: 0.2; Status: APPROVED (G1, Dan Andrei, 2026-10-18; D-008). Open Questions stay tracked in TASK-003 to TASK-005.
 - Refined by: CODEX, 2026-10-18, from Claude's v0.1 and the supplied internal sources.
 - Internal strategy; public wording is isolated in `copy/home.md`. `[to confirm]` blocks publication of the affected claim.
 

@@ -1,6 +1,6 @@
 # Sitemap and Journeys — MONO Creative Studio
 
-- Version: 0.2; Status: REVIEW — TASK-002, G1 approval by Dan Andrei pending.
+- Version: 0.2; Status: APPROVED (G1, Dan Andrei, 2026-10-18; D-008). Open Questions stay tracked in TASK-003 to TASK-005.
 - Refined by: CODEX, 2026-10-18, from Claude's v0.1; URLs and content contracts, not implementation approval.
 
 ## Principles, header and footer

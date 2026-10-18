@@ -5,7 +5,7 @@
 - Authorized files: `project/01_STRATEGY.md`, `project/02_SITEMAP.md`, `copy/home.md`, this task; claim in `project/TASK_LOCKS.md`.
 - Inputs: CLAUDE.md, AI_HANDOFF.md, TASK_LOCKS.md, 06_DECISIONS.md, COORDINATION.md; 00_PROJECT.md, strategy/reference-analysis sources, v0.1 strategy/sitemap/design/Home; relevant CC_WEBDEV sections 4, 6, 8.
 - Acceptance: concise strategy/sitemap (each under two pages at normal document scale), audiences, two zones, CTAs, URLs, RO/EN proposal, sources, publication conditions and Open Questions; Dan reviews G1, Home at G2.
-- **AMBIGUITY:**
+- **AMBIGUITY (resolved by D-010, 2026-10-18):**
   - Document/section affected: `project/04_DESIGN_SPEC.md` (TASK-005) and coordination claim procedure.
   - Question: Should visual specification edits be reassigned to TASK-002; should this claim be merged to main before review?
   - Impact: design remains read-only because its lock overlaps TASK-005; claim stays on the requested branch because Dan explicitly prohibited work on main. No visual or main-branch changes made.
