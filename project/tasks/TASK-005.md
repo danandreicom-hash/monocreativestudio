@@ -10,4 +10,4 @@
 - Must cover: one visual system with two registers (Shop warmer and gallery-like, Print Lab cleaner and technical); one canonical header and footer; tokens (colour, type, spacing) with exact hex values from approved assets; image provenance rules; photo treatment.
 - Acceptance: tokens and 3 representative pages defined; open questions listed.
 - Check: Dan approves G3 after the prototype.
-- Result: (owner fills)
+- Result: REVIEW — v0.2 refines Claude v0.1 for G3: monochrome/red working tokens, calculated AA contrast, Manrope/Outfit OFL with Romanian cmap verified, canonical logos/header/footer, imagery, Home/Lab/Shop Coming soon, RO/EN country-language proposal. Creative choices/vector assets remain Open Questions for Dan/Vladimir; no final creative approval or code. QA: `bash scripts/qa.sh` passed (2026-10-18).
