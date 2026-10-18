@@ -29,10 +29,17 @@ A print studio that looks like a good print: restrained, exact, image-led. The p
 | ------------ | --------------------------------------------------------------------------------------- | ---------- |
 | Brand colour | One accent taken from MONO's own logo or brand assets, exact hex from the approved file | to confirm |
 | Neutrals     | Paper white, warm grey, near-black for text; contrast meets WCAG 2.2 AA                 | to design  |
-| Display type | A refined serif for headlines and edition names                                         | to choose  |
+| Display type | A refined serif for headlines and edition names (see reference note below)              | to choose  |
 | Text type    | A neutral sans for body, navigation, forms, tables                                      | to choose  |
 | Fonts        | Self-hosted and subset where licences permit; no Google Fonts requests                  | rule       |
 | Spacing      | Scale defined once in `global.css`                                                      | to design  |
+
+## Reference note (observed 2026-10-18, `project/source/reference-analysis-2026-10.md`)
+
+- The three references keep type plain: one geometric sans throughout, or an editorial serif for section titles over a neutral sans for everything else; text is near-black on white, and the artwork supplies the colour.
+- MONO follows the second pattern for the Shop register and uses the sans alone for the Print Lab register.
+- Candidate pairs to test in the G3 prototype (open-licence, self-hostable; not the references' fonts and not Conceptiones' fonts): a serif such as Newsreader or Instrument Serif with a sans such as Manrope or Public Sans. Dan chooses.
+- Borrowed from the references: square or lightly rounded controls, generous image blocks, short overlay text, one repeated verb per zone. Not borrowed: carousels, countdown banners, award-led hierarchy.
 
 ## Components (phase 1)
 

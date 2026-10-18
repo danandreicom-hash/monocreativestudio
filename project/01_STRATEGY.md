@@ -34,6 +34,13 @@ Borrowed method, not wording:
 
 Two registers: Shop is warmer and gallery-like (edition, artist, collection); Print Lab is precise and technical (files, colour, paper, volume). Same brand, same header and footer, different sentences.
 
+## What the three reference sites teach (see `project/source/reference-analysis-2026-10.md`)
+
+- Concrete benefits beat superlatives; their unquantified "best" claims are exactly what MONO avoids.
+- One promise and one verb per block; the Shop repeats a single invitation ("Discover" style), the Print Lab repeats "Request a quote".
+- A sample pack is the entry point for new customers; professionals get their own door.
+- Several ways to reach a person, shown plainly.
+
 ## Working headline directions (for ChatGPT to test and refine)
 
 - Home: "Fine art prints, made with care." / "Museum-quality prints, from our own lab." `[lab claim to confirm]`
