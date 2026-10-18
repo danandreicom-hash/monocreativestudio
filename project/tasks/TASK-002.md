@@ -1,9 +1,9 @@
 # TASK-002 — Strategy and sitemap (gate G1)
 
-- Status: REVIEW (becomes IMPLEMENT when Dan sets it)
+- Status: IMPLEMENT (set by Dan, 2026-10-18)
 - Owner / branch: CODEX / `codex/TASK-002`
 - Goal: turn the internal strategy draft into `01_STRATEGY.md` and `02_SITEMAP.md` (each under 2 pages), for Dan's G1 approval.
-- Authorized by: D-003, D-005.
+- Authorized by: D-003, D-005; IMPLEMENT set by Dan, 2026-10-18.
 - Authorized files: `project/01_STRATEGY.md`, `project/02_SITEMAP.md`.
 - Do not touch: everything else.
 - Read only: `project/00_PROJECT.md`; `project/source/strategy-draft-2026-10.md`; Claude's drafts in `project/01_STRATEGY.md` and `project/02_SITEMAP.md` (version 0.1, refine or replace).

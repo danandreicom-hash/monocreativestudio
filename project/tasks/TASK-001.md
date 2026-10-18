@@ -1,9 +1,9 @@
 # TASK-001 — Bootstrap cleanup (MONO identity, no demo content)
 
-- Status: REVIEW (becomes IMPLEMENT when Dan sets it)
+- Status: IMPLEMENT (set by Dan, 2026-10-18)
 - Owner / branch: CLAUDE / `claude/TASK-001`
 - Goal: turn the master copy into a clean MONO project: remove the demo content inherited from the master, neutral MONO identity, indexing off.
-- Authorized by: D-004 (pending IMPLEMENT from Dan).
+- Authorized by: D-004; IMPLEMENT set by Dan, 2026-10-18.
 - Authorized files: `src/**`, `public/**`, `astro.config.mjs`, `wrangler.jsonc`, `.env.example`, `README.md`, `package.json` (name only).
 - Do not touch: `project/**` except this file's Result, `CC_WEBDEV.md`, `workers/**` (kept inert).
 - Read only: `CC_WEBDEV.md` section 12 (bootstrap), section 7 (stack).

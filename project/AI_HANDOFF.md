@@ -15,8 +15,8 @@
 
 ## Tasks
 
-- TASK-001 bootstrap cleanup (remove demo, MONO identity, noindex): REVIEW, owner Claude
-- TASK-002 strategy and sitemap (G1): REVIEW, owner ChatGPT; Claude drafts v0.1 of 01, 02 and 04 exist as input
+- TASK-001 bootstrap cleanup (remove demo, MONO identity, noindex): IMPLEMENT, owner Claude
+- TASK-002 strategy and sitemap (G1): IMPLEMENT, owner ChatGPT; Claude drafts v0.1 of 01, 02 and 04 exist as input
 - TASK-003 lab facts and Print Lab copy brief (G2): REVIEW, owner ChatGPT
 - TASK-004 Shopify architecture and edition model: REVIEW, owner ChatGPT
 - TASK-005 visual direction brief for Claude Design (G3): REVIEW, owner ChatGPT
@@ -35,5 +35,5 @@
 
 ## Next
 
-- Dan: create the empty private GitHub repository, then set TASK-001 to IMPLEMENT.
+- Dan: send `project/questions-for-vladimir.md` to Vladimir; start ChatGPT on TASK-002.
 - ChatGPT: start with TASK-002 in a new thread, using the startup prompt in `CC_WEBDEV.md` section 11.
