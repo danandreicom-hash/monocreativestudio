@@ -265,5 +265,14 @@
   "cCertA": "Fără",
   "cCertB": "Certificat de calitate sau certificat numerotat pentru edițiile limitate",
   "cmpNote": "Un poster decorativ este o alegere corectă pentru o cameră temporară sau un buget mic. Un print MONO este pentru lucrările pe care vrei să le păstrezi.",
-  "fSubject": "Cerere de ofertă Print Lab"
+  "fSubject": "Cerere de ofertă Print Lab",
+  "iccT": "Profile ICC pentru soft-proof",
+  "iccP": "Un profil ICC descrie cum redă o hârtie culoarea pe imprimanta noastră. Cu el poți vedea pe ecran imaginea așa cum va fi tipărită, înainte să trimiți fișierul.",
+  "icc1": "Cum îl folosești",
+  "icc1p": "În Photoshop sau Lightroom, alege Soft Proofing, selectează profilul hârtiei tale și compară. Ajustează imaginea dacă previzualizarea arată detalii pierdute sau culori schimbate.",
+  "icc2": "Ce hârtii",
+  "icc2p": "Profile pentru hârtiile noastre Hahnemühle Digital FineArt și Canon, pe imprimanta Canon imagePROGRAF PRO-4600.",
+  "icc3": "Obține profilul",
+  "icc3p": "Cere-ne profilul hârtiei tale și ți-l trimitem odată cu oferta. Linkurile de descărcare directă vor fi adăugate aici.",
+  "iccBtn": "Cere un profil"
 }

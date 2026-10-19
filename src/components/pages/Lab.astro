@@ -140,6 +140,18 @@ const h = (page: Parameters<typeof href>[1], anchor?: string) => href(lang, page
   </div>
 </section>
 
+<section class="band" id="icc">
+  <span class="mark"></span>
+  <h2>{t.iccT}</h2>
+  <p style="margin-top:16px">{t.iccP}</p>
+  <div class="three">
+    <div><h3>{t.icc1}</h3><p>{t.icc1p}</p></div>
+    <div><h3>{t.icc2}</h3><p>{t.icc2p}</p></div>
+    <div><h3>{t.icc3}</h3><p>{t.icc3p}</p></div>
+  </div>
+  <div style="margin-top:28px"><a class="btn ghost" href={h("lab", "lab-form")}>{t.iccBtn}</a></div>
+</section>
+
 <section class="band">
   <h2>{t.whoT}</h2>
   <div class="three">

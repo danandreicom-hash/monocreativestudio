@@ -265,5 +265,14 @@
   "cCertA": "None",
   "cCertB": "Certificate of quality, or numbered certificate for limited editions",
   "cmpNote": "A décor poster is a fair choice for a temporary room or a small budget. A MONO print is for work you want to keep.",
-  "fSubject": "Print Lab quote request"
+  "fSubject": "Print Lab quote request",
+  "iccT": "ICC profiles for soft-proofing",
+  "iccP": "An ICC profile describes how a paper reproduces colour on our printer. With it, you can preview your image on screen the way it will print, before you send the file.",
+  "icc1": "How to use it",
+  "icc1p": "In Photoshop or Lightroom, choose Soft Proofing, select the profile of your paper and compare. Adjust the image if the preview shows lost detail or colour shifts.",
+  "icc2": "Which papers",
+  "icc2p": "Profiles for our Hahnemühle Digital FineArt and Canon papers on the Canon imagePROGRAF PRO-4600.",
+  "icc3": "Get the profile",
+  "icc3p": "Ask us for the profile of your paper and we send it with the quote. Direct downloads will be added here.",
+  "iccBtn": "Ask for a profile"
 }
