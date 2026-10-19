@@ -53,3 +53,11 @@
 
 - Magazin Shopify separat de Arthalle sau comun (fiscalitate, risc, planul ONG): decizie după TASK-004 și un sfat de la contabil.
 - Aprobarea costurilor: Shopify, domeniu, email (D-006).
+
+## Addendum 2026-10-19: file preparation (copy/file-preparation.md)
+
+- Which colour profiles do you prefer clients to send (Adobe RGB, sRGB, ProPhoto)? Do you accept CMYK?
+- Is the extra 2 cm protective margin on Hahnemühle full-surface prints your rule? What margins apply to canvas and framing?
+- Do you want a 3 mm bleed and a 5 mm safe margin for all formats?
+- How should clients send files at launch (email, transfer link) and what is the maximum file size?
+- Can you provide a downloadable ICC profile per paper for soft-proofing?
