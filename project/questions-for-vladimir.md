@@ -1,6 +1,6 @@
 # Întrebări pentru Vladimir — MONO Creative Studio
 
-- Status: pentru TASK-003 (fapte despre laborator) și brief-ul proiectului. Dan le transmite lui Vladimir.
+- Status: răspunsuri primite 2026-10-19, vezi D-020; rămân deschise doar ICC descărcabil, numele exact al imprimantei și numele legal/CUI. Inițial: pentru TASK-003 (fapte despre laborator) și brief-ul proiectului. Dan le transmite lui Vladimir.
 - Regulă: ce nu e confirmat aici nu apare pe site. Răspunsurile scurte sunt suficiente; „nu știu încă” este un răspuns valid.
 - Răspunsurile se scriu în `project/lab-facts.md` (ChatGPT) sau în `project/00_PROJECT.md` (Claude), fiecare cu sursa.
 

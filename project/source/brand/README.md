@@ -16,3 +16,5 @@
 
 Derived files in `public/brand/`: `mono-logo-horizontal.svg` (site header, on light), `mono-logo-horizontal-light.svg` (white version for dark backgrounds), `mono-mark-square.svg` (footer, social avatar). Favicon: `public/favicon.svg`, `favicon-32.png`, `apple-touch-icon.png`, `icon-512.png`.
 Still needed: confirmation of Pantone/CMYK values and the wordmark font (the logo is drawn from shapes, not a font).
+
+- 2026-10-19 (D-020): the logo has no wordmark font; the current colours are confirmed correct. Pantone/CMYK values are still optional.

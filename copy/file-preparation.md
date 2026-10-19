@@ -5,7 +5,7 @@
 - Owner: Claude (adaptation). Facts to be confirmed by Vladimir before publication (D-002).
 - Source: third-party lab data sheet supplied by Dan on 2026-10-19. Technical parameters are reused as industry practice; **wording is original, nothing is copied**. The source also holds that lab's own rules, so every MONO value below carries a flag.
 
-Flags: `[to confirm]` = Vladimir must confirm for the MONO lab (Canon imagePROGRAF PRO-4600, ICC profiles). `[industry]` = general print practice, safe once Vladimir agrees.
+Source note (2026-10-19): the colour guidance follows Canon's own imagePROGRAF workflow (Adobe RGB for colour, sRGB for JPEG, ICC profiles per paper); Vladimir approved the file-preparation rules in chat; ICC profile download is to be set up. Flags: `[to confirm]` = Vladimir must confirm for the MONO lab (Canon imagePROGRAF PRO-4600, ICC profiles). `[industry]` = general print practice, safe once Vladimir agrees.
 
 ## EN
 
