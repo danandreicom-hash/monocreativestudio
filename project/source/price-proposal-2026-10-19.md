@@ -32,10 +32,9 @@ Brand of Satin Baryta and Metallic Pearl, and maker of Aquarella: to confirm. Ha
 | 60 x 80  | 30        | 36            | 49       |
 | 70 x 70  | 31        | 37            | 50       |
 | 70 x 100 | 38        | 47            | 66       |
-| 70 x 140 | 49        | 61            | 86       |
-| 70 x 200 | 64        | 82            | 118      |
+| 70 x 150 | 52        | 65            | 91       |
 
-Square formats 30 x 30 and 70 x 70 (added at Dan's request, 2026-10-19) are interpolated by area between neighbouring sizes. Sizes up to 70 x 200 cm are quoted, as in Vladimir's maximum. Custom sizes: price by area from the nearest row.
+Square formats 30 x 30 and 70 x 70 (added at Dan's request, 2026-10-19) are interpolated by area between neighbouring sizes. Sizes up to 70 x 150 cm are quoted, as in Vladimir's maximum. Custom sizes: price by area from the nearest row.
 
 ## Proposed rules
 

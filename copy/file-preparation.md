@@ -113,6 +113,6 @@ Nu ești sigur? Trimite fișierul și îți spunem în 24 de ore ce trebuie ajus
 
 1. Which colour profiles does the MONO workflow prefer (Adobe RGB, sRGB, ProPhoto)? CMYK accepted at all?
 2. Is the 2 cm Hahnemühle margin a MONO rule or only the source lab's?
-3. Bleed (3 mm) and safe margin (5 mm): confirm for MONO formats A4 to 70 × 200 cm.
+3. Bleed (3 mm) and safe margin (5 mm): confirm for MONO formats A4 to 70 × 150 cm.
 4. File channel at launch and maximum file size.
 5. Wording of the no-liability clause: legal review.

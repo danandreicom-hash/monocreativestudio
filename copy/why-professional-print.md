@@ -6,7 +6,7 @@
 
 ## Blocks
 
-1. **Home, "Why work with a professional print lab"**: colour that follows your file (ICC profile per paper); materials made to last (pigment inks, manufacturer's ageing guarantee); checked by people (file review, print inspection); right paper and size (papers, canvas, metal, glass, up to 70 × 200 cm, framing through partners).
+1. **Home, "Why work with a professional print lab"**: colour that follows your file (ICC profile per paper); materials made to last (pigment inks, manufacturer's ageing guarantee); checked by people (file review, print inspection); right paper and size (papers, canvas, metal, glass, up to 70 × 150 cm, framing through partners).
 2. **Home, "Quality art at home and at work"**: pictures seen daily give a room character; fits home, office, studio, reception; CTA quote and price guide.
 3. **Print Lab, "Why the price reflects the quality"**: comparison table, typical mass-market décor print vs MONO print, by paper, ink and process, colour, sizes, checking, certificate; closing line that a décor poster suits a temporary room or small budget, a MONO print suits work to keep.
 4. **File guide**: 300 dpi at final size is the recommended resolution; very large formats viewed from a distance can work with less.
