@@ -1,7 +1,7 @@
 # AI Handoff
 
 - Protocol version: 2.0 (CC WEBDEV, `CC_WEBDEV.md`)
-- Updated: 2026-10-18
+- Updated: 2026-10-19
 - Base: bootstrap from `you-on-the-com` master (CC WEBDEV v2.0, commit e1102f1). TASK-001 (demo removed, MONO placeholder) is merged to main.
 - Overall: Phase 1 = site + Print Lab + small Shopify shop. The bilingual Astro site (TASK-008) is built locally; nothing is published. Preview prototype v8 is a private artifact.
 
@@ -38,5 +38,5 @@
 
 ## Next
 
-- Dan: send `project/questions-for-vladimir.md` to Vladimir; deploy the Cloudflare preview (D-012) with Claude, one command at a time; create office@ in Cloudflare Email Routing (D-016).
+- Dan: send `project/questions-for-vladimir.md` to Vladimir; deploy the Cloudflare preview (D-012) with Claude, one command at a time; redeploy the preview; send a test mail to vladimir@ (D-022).
 - ChatGPT: TASK-003 starts when Vladimir answers; TASK-004 and TASK-005 can start from the G1 baseline.
