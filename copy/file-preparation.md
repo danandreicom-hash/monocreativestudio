@@ -31,8 +31,8 @@ A good print starts with a good file. Follow these steps and your colours, sharp
 
 Resolution depends on the viewing distance, not only on the size.
 
-- Viewed up close: 100 to 150 dpi at final size.
-- Viewed from a distance (large formats): about 72 to 96 dpi is enough.
+- Best: **300 dpi at final size**, the safest choice for a sharp, detailed print (Dan, 2026-10-19).
+- Very large formats seen from a distance can work with less (about 100 to 150 dpi); send the file and we tell you.
 - Working at less than 1:1? State the scale; the resolution drops proportionally at final size.
 - Never upscale a small file only to reach a number: it adds pixels, not detail.
 
@@ -79,8 +79,8 @@ O imprimare bună începe cu un fișier bun. Dacă urmezi pașii de mai jos, cul
 
 Rezoluția depinde de distanța de privire, nu doar de dimensiune.
 
-- Privit de aproape: 100 – 150 dpi la dimensiunea finală.
-- Privit de la distanță (formate mari): aproximativ 72 – 96 dpi sunt suficienți.
+- Ideal: **300 dpi la dimensiunea finală**, alegerea cea mai sigură pentru un print clar și detaliat.
+- Formatele foarte mari, privite de la distanță, pot funcționa cu mai puțin (aproximativ 100 – 150 dpi); trimite fișierul și îți spunem.
 - Lucrezi la o scară mai mică de 1:1? Menționează scara; rezoluția scade proporțional la dimensiunea finală.
 - Nu mări artificial un fișier mic doar ca să atingi o cifră: adaugi pixeli, nu detaliu.
 
