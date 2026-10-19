@@ -17,7 +17,7 @@
 
 Source of the Canon names and gsm: a reseller page listing the Canon PRO-Series media (retrieved 2026-10-19). Vladimir's table uses names that do not appear in that list (Premium Poster Paper, Photo Paper glossy, Glacier, Satin Baryta, Metallic Pearl). Vladimir must give the exact product name and code of every paper he stocks.
 
-Brand of Satin Baryta and Metallic Pearl, and maker of Aquarella: to confirm. Hahnemuhle longevity figures apply only to the Hahnemuhle Digital FineArt papers and must be quoted as the maker\'s claim, with ink and conditions. The Canon fine art papers need their own maker data.
+Brand of Satin Baryta and Metallic Pearl, and maker of Aquarella: to confirm. Hahnemuhle longevity figures apply only to the Hahnemuhle Digital FineArt papers and must be quoted as the maker's claim, with ink and conditions. The Canon fine art papers need their own maker data.
 
 ## Proposed prices, EUR per print
 
