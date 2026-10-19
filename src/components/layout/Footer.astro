@@ -8,7 +8,14 @@ const { email, phone } = siteConfig.contact;
 
 <footer class="border-t border-stone-200 bg-stone-50">
   <Container class="flex flex-col gap-3 py-10 text-sm text-stone-600">
-    <p class="font-display text-lg font-semibold text-stone-900">{siteConfig.companyName}</p>
+    <img
+      src="/brand/mono-mark-square.svg"
+      alt={siteConfig.companyName}
+      width="56"
+      height="56"
+      class="size-14"
+      loading="lazy"
+    />
     <p>{siteConfig.tagline}</p>
     {email && <a href={`mailto:${email}`}>{email}</a>}
     {phone && <a href={`tel:${phone.replace(/\s/g, "")}`}>{phone}</a>}

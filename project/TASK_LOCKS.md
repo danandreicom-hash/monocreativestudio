@@ -12,3 +12,4 @@ One owner per task. Rules: `project/COORDINATION.md`. Owner is `CLAUDE`, `CODEX`
 | TASK-006 | REVIEW      | CODEX | -               | -          | `project/05_DEV_SPEC.md`, `project/configurator.md`                                            |
 
 Add one row per task. Remove nothing; set the owner to `NONE` and the status to `IMPLEMENTED` on merge.
+| TASK-007 | IMPLEMENTED | NONE | main | 2026-10-19 | `public/brand/**`, `public/images/**`, `public/favicon*`, `src/components/layout/**` |
