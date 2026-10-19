@@ -13,3 +13,4 @@ One owner per task. Rules: `project/COORDINATION.md`. Owner is `CLAUDE`, `CODEX`
 
 Add one row per task. Remove nothing; set the owner to `NONE` and the status to `IMPLEMENTED` on merge.
 | TASK-007 | IMPLEMENTED | NONE | main | 2026-10-19 | `public/brand/**`, `public/images/**`, `public/favicon*`, `src/components/layout/**` |
+| TASK-008 | IMPLEMENTED | NONE | main | 2026-10-19 | `src/**`, `public/**`, `astro.config.mjs`, `wrangler.jsonc` |

@@ -13,6 +13,7 @@ interface Props {
   image?: string;
   type?: "website" | "article";
   noindex?: boolean;
+  lang?: "ro" | "en";
 }
 
 const {
@@ -21,6 +22,7 @@ const {
   image,
   type = "website",
   noindex = false,
+  lang = "en",
 } = Astro.props;
 
 const pageTitle = title === siteConfig.companyName ? title : `${title} · ${siteConfig.companyName}`;
@@ -42,7 +44,7 @@ const blockIndexing = noindex || import.meta.env.PUBLIC_ALLOW_INDEXING !== "true
 <meta property="og:url" content={canonicalURL} />
 {imageURL && <meta property="og:image" content={imageURL} />}
 <meta property="og:site_name" content={siteConfig.companyName} />
-<meta property="og:locale" content="en_US" />
+<meta property="og:locale" content={lang === "ro" ? "ro_RO" : "en_US"} />
 
 <!-- Twitter Card -->
 <meta name="twitter:card" content={imageURL ? "summary_large_image" : "summary"} />

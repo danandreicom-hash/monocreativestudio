@@ -1,11 +1,10 @@
 ---
-import { ClientRouter } from "astro:transitions";
-import { Font } from "astro:assets";
 import Seo from "@components/seo/Seo.astro";
 import OrganizationSchema from "@components/seo/OrganizationSchema.astro";
 import SkipLink from "@components/ui/SkipLink.astro";
 import Header from "@components/layout/Header.astro";
 import Footer from "@components/layout/Footer.astro";
+import { href, langs, type Lang, type Page } from "@i18n/index";
 import "../styles/global.css";
 
 interface Props {
@@ -14,13 +13,15 @@ interface Props {
   image?: string;
   type?: "website" | "article";
   noindex?: boolean;
+  lang?: Lang;
+  page?: Page;
 }
 
-const { title, description, image, type, noindex } = Astro.props;
+const { title, description, image, type, noindex, lang = "en", page } = Astro.props;
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang={lang}>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -30,21 +31,53 @@ const { title, description, image, type, noindex } = Astro.props;
     <link rel="manifest" href="/site.webmanifest" />
     <meta name="generator" content={Astro.generator} />
 
-    <!-- Fonturi auto-găzduite (vezi astro.config.mjs § fonts) — Inter preîncărcat
-         fiindcă e fontul corpului de text, folosit imediat above-the-fold. -->
-    <Font cssVariable="--font-inter" preload />
-    <Font cssVariable="--font-fraunces" />
+    <link
+      rel="preload"
+      href="/fonts/outfit-latin-400-normal.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="/fonts/outfit-latin-500-normal.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
 
-    <Seo title={title} description={description} image={image} type={type} noindex={noindex} />
+    <Seo
+      title={title}
+      description={description}
+      image={image}
+      type={type}
+      noindex={noindex}
+      lang={lang}
+    />
+    {
+      page &&
+        langs.map((l) => (
+          <link rel="alternate" hreflang={l} href={new URL(href(l, page), Astro.site)} />
+        ))
+    }
+    {page && <link rel="alternate" hreflang="x-default" href={new URL("/", Astro.site)} />}
     <OrganizationSchema />
-    <ClientRouter />
   </head>
   <body>
     <SkipLink />
-    <Header />
-    <main id="main-content">
+    {page ? <Header lang={lang} page={page} /> : null}
+    <main class="wrap" id="main-content">
       <slot />
     </main>
-    <Footer />
+    {page ? <Footer lang={lang} /> : null}
+    <script is:inline>
+      document.addEventListener("click", function (e) {
+        const a = e.target.closest && e.target.closest("[data-lang]");
+        if (a) {
+          document.cookie =
+            "mono_lang=" + a.getAttribute("data-lang") + ";path=/;max-age=31536000;samesite=lax";
+        }
+      });
+    </script>
   </body>
 </html>

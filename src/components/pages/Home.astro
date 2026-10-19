@@ -1,0 +1,252 @@
+---
+import { getT, href, type Lang } from "@i18n/index";
+interface Props {
+  lang: Lang;
+}
+const { lang } = Astro.props;
+const t = getT(lang);
+const h = (page: Parameters<typeof href>[1], anchor?: string) => href(lang, page, anchor);
+---
+
+<section class="herofull" style="padding-top:0">
+  <div class="ph g3 dark r-hero has">
+    <img
+      src="/images/photos/gallery-berlin-series.webp"
+      alt=""
+      fetchpriority="high"
+      decoding="async"
+    />
+  </div>
+  <div class="panel">
+    <span class="mark"></span>
+    <h1>{t.h1}</h1>
+    <p>{t.sub}</p>
+    <div style="display:flex;flex-wrap:wrap;gap:12px">
+      <a class="btn" href={h("lab", "lab-form")}>{t.quote}</a>
+      <a class="btn ghost" href={h("shop")}>{t.ctaShop}</a>
+    </div>
+  </div>
+</section>
+
+<section class="band">
+  <span class="mark"></span>
+  <h2>{t.fam}</h2>
+  <p style="margin-top:16px">{t.famP}</p>
+  <div class="tiles">
+    <article class="tile">
+      <div class="ph r-port has">
+        <img src="/images/photos/paper-stack-sm.webp" alt="" loading="lazy" decoding="async" />
+      </div><h3>{t.tPaper}</h3><p>{t.tPaperP}</p><a class="lnk" href={h("lab")}>{t.more}</a>
+    </article>
+    <article class="tile">
+      <div class="ph r-port has">
+        <img src="/images/photos/room-green-chair-sm.webp" alt="" loading="lazy" decoding="async" />
+      </div><h3>{t.tFramed}</h3><p>{t.tFramedP}</p><a class="lnk" href={h("lab")}>{t.more}</a>
+    </article>
+    <article class="tile">
+      <div class="ph r-port has">
+        <img
+          src="/images/photos/gallery-abstract-three-sm.webp"
+          alt=""
+          loading="lazy"
+          decoding="async"
+        />
+      </div><h3>{t.tCanvas}</h3><p>{t.tCanvasP}</p><a class="lnk" href={h("lab")}>{t.more}</a>
+    </article>
+    <article class="tile">
+      <div class="ph r-port has">
+        <img src="/images/photos/gallery-bw-three-sm.webp" alt="" loading="lazy" decoding="async" />
+      </div><h3>{t.tMetal}</h3><p>{t.tMetalP}</p><a class="lnk" href={h("lab")}>{t.more}</a>
+    </article>
+    <article class="tile">
+      <div class="ph r-port has">
+        <img
+          src="/images/photos/room-flowers-triptych-sm.webp"
+          alt=""
+          loading="lazy"
+          decoding="async"
+        />
+      </div><h3>{t.tGlass}</h3><p>{t.tGlassP}</p><a class="lnk" href={h("lab")}>{t.more}</a>
+    </article>
+  </div>
+</section>
+
+<section class="band pitch">
+  <div>
+    <span class="mark"></span>
+    <h2>{t.pitchT}</h2>
+    <p class="lead">{t.pitchP}</p>
+    <ul class="ticks">
+      <li><span><b>{t.b1}</b><br /><span>{t.b1p}</span></span></li>
+      <li><span><b>{t.b2}</b><br /><span>{t.b2p}</span></span></li>
+      <li><span><b>{t.b3}</b><br /><span>{t.b3p}</span></span></li>
+      <li><span><b>{t.b4}</b><br /><span>{t.b4p}</span></span></li>
+      <li><span><b>{t.b5}</b><br /><span>{t.b5p}</span></span></li>
+    </ul>
+    <div style="display:flex;flex-wrap:wrap;gap:12px;margin-top:32px">
+      <a class="btn" href={h("lab", "lab-form")}>{t.quote}</a>
+    </div>
+  </div>
+  <div class="ph g2 r-port has">
+    <img src="/images/photos/lab-loupe-inspection.webp" alt="" loading="lazy" decoding="async" />
+  </div>
+</section>
+
+<section class="band">
+  <span class="mark"></span>
+  <h2>{t.techT}</h2>
+  <p style="margin-top:16px">{t.techP}</p>
+  <div class="cards4">
+    <div class="card">
+      <div class="ph g1 r-land has">
+        <img src="/images/photos/printer-orange-sm.webp" alt="" loading="lazy" decoding="async" />
+      </div><h3>{t.k1}</h3><p>{t.k1p}</p>
+    </div>
+    <div class="card">
+      <div class="ph g4 r-land has">
+        <img src="/images/photos/colour-proofing-sm.webp" alt="" loading="lazy" decoding="async" />
+      </div><h3>{t.k2}</h3><p>{t.k2p}</p>
+    </div>
+    <div class="card">
+      <div class="ph g5 r-land has">
+        <img src="/images/photos/lab-beach-loupe-sm.webp" alt="" loading="lazy" decoding="async" />
+      </div><h3>{t.k3}</h3><p>{t.k3p}</p><span class="tc2">[to confirm]</span>
+    </div>
+  </div>
+</section>
+
+<section class="band">
+  <span class="mark"></span>
+  <h2>{t.papT}</h2>
+  <p style="margin-top:16px">{t.papP}</p>
+  <div class="cards4">
+    <div class="card">
+      <div class="ph r-land has">
+        <img src="/images/photos/paper-samples-sm.webp" alt="" loading="lazy" decoding="async" />
+      </div><h3>{t.p1}</h3><p>{t.p1p}</p><span class="tc2">{t.mk}</span>
+    </div>
+    <div class="card">
+      <div class="ph r-land has">
+        <img src="/images/photos/roll-beach-sm.webp" alt="" loading="lazy" decoding="async" />
+      </div><h3>{t.p2}</h3><p>{t.p2p}</p><span class="tc2">{t.mk}</span>
+    </div>
+    <div class="card">
+      <div class="ph r-land has">
+        <img src="/images/photos/printer-wave-sm.webp" alt="" loading="lazy" decoding="async" />
+      </div><h3>{t.p3}</h3><p>{t.p3p}</p>
+    </div>
+    <div class="card">
+      <div class="ph r-land has">
+        <img
+          src="/images/photos/gallery-berlin-three-sm.webp"
+          alt=""
+          loading="lazy"
+          decoding="async"
+        />
+      </div><h3>{t.p4}</h3><p>{t.p4p}</p>
+    </div>
+  </div>
+  <div style="margin-top:32px">
+    <a class="btn ghost" href={h("lab", "lab-form")}>{t.sampleCta}</a>
+  </div>
+</section>
+
+<section class="band">
+  <span class="mark"></span>
+  <h2>{t.whyT}</h2>
+  <p style="margin-top:16px">{t.whyP}</p>
+  <div class="cards4">
+    <div class="card"><h3>{t.why1}</h3><p>{t.why1p}</p></div>
+    <div class="card"><h3>{t.why2}</h3><p>{t.why2p}</p></div>
+    <div class="card"><h3>{t.why3}</h3><p>{t.why3p}</p></div>
+    <div class="card"><h3>{t.why4}</h3><p>{t.why4p}</p></div>
+  </div>
+</section>
+
+<section class="band">
+  <span class="mark"></span>
+  <h2>{t.fmtT}</h2>
+  <p style="margin-top:16px">{t.fmtP}</p>
+  <div class="fmts" role="img" aria-label="Relative print formats">
+    <div class="fmt"><i style="width:40px;height:60px"></i><b>20 × 30</b></div>
+    <div class="fmt"><i style="width:60px;height:60px"></i><b>30 × 30</b></div>
+    <div class="fmt"><i style="width:60px;height:80px"></i><b>30 × 40</b></div>
+    <div class="fmt"><i style="width:80px;height:100px"></i><b>40 × 50</b></div>
+    <div class="fmt"><i style="width:100px;height:140px"></i><b>50 × 70</b></div>
+    <div class="fmt"><i style="width:140px;height:140px"></i><b>70 × 70</b></div>
+    <div class="fmt"><i style="width:140px;height:200px"></i><b>70 × 100</b></div>
+    <div class="fmt"><i style="width:140px;height:300px"></i><b>70 × 150</b></div>
+  </div>
+  <p class="small" style="margin-top:24px">{t.fmtNote}</p>
+</section>
+
+<section class="band">
+  <span class="mark"></span>
+  <h2>{t.homeT}</h2>
+  <p class="lead">{t.homeP}</p>
+  <div style="display:flex;flex-wrap:wrap;gap:12px;margin-top:32px">
+    <a class="btn" href={h("lab", "lab-form")}>{t.quote}</a><a class="btn ghost" href={h("lab")}
+      >{t.seePrices}</a
+    >
+  </div>
+</section>
+
+<section class="band pitch">
+  <div>
+    <span class="mark"></span>
+    <h2>{t.edT}</h2>
+    <p class="lead">{t.edP}</p>
+    <ul class="ticks">
+      <li><span><b>{t.edB1}</b><br /><span>{t.edB1p}</span></span></li>
+      <li><span><b>{t.edB2}</b><br /><span>{t.edB2p}</span></span></li>
+      <li><span><b>{t.edB3}</b><br /><span>{t.edB3p}</span></span></li>
+    </ul>
+    <span class="tc2">{t.tbc}</span>
+  </div>
+  <div class="ph r-wide has">
+    <img src="/images/photos/room-concrete-posters.webp" alt="" loading="lazy" decoding="async" />
+  </div>
+</section>
+
+<section class="band">
+  <span class="mark"></span>
+  <h2>{t.shopT}</h2>
+  <p style="margin-top:16px">{t.shopP}</p>
+  <div style="display:flex;flex-wrap:wrap;align-items:center;gap:16px;margin-top:32px">
+    <span class="badge">{t.soon}</span><a class="btn ghost" href={h("shop")}>{t.doorShopC}</a>
+  </div>
+</section>
+
+<section class="band">
+  <span class="mark"></span>
+  <h2>{t.proT}</h2>
+  <div class="three">
+    <div><h3>{t.aArt}</h3><p>{t.aArtP}</p></div>
+    <div><h3>{t.aDes}</h3><p>{t.aDesP}</p></div>
+    <div><h3>{t.aBiz}</h3><p>{t.aBizP}</p></div>
+  </div>
+</section>
+
+<section style="padding-block:0 0">
+  <div class="cta-band">
+    <div class="in">
+      <h2>{t.talkT}</h2>
+      <p>{t.talkP}</p>
+      <div style="display:flex;flex-wrap:wrap;gap:12px">
+        <a class="btn" href={h("lab", "lab-form")}>{t.quote}</a><a
+          class="btn ghost"
+          href={h("contact")}>{t.write}</a
+        >
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>{t.reachT}</h2>
+  <div class="contacts">
+    <div class="card"><h3>{t.rc1}</h3><p>{t.rc1p}</p><span class="tc2">[to confirm]</span></div>
+    <div class="card"><h3>{t.rc2}</h3><p>{t.rc2p}</p><span class="tc2">[to confirm]</span></div>
+    <div class="card"><h3>{t.rc3}</h3><p>{t.rc3p}</p><span class="tc2">[to confirm]</span></div>
+  </div>
+</section>

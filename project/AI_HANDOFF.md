@@ -3,7 +3,7 @@
 - Protocol version: 2.0 (CC WEBDEV, `CC_WEBDEV.md`)
 - Updated: 2026-10-18
 - Base: bootstrap from `you-on-the-com` master (CC WEBDEV v2.0, commit e1102f1). TASK-001 (demo removed, MONO placeholder) is merged to main.
-- Overall: project pack created. Phase 1 = site + Print Lab + small Shopify shop. Nothing is implemented or published.
+- Overall: Phase 1 = site + Print Lab + small Shopify shop. The bilingual Astro site (TASK-008) is built locally; nothing is published. Preview prototype v8 is a private artifact.
 
 ## Read order (every task)
 
@@ -20,6 +20,8 @@
 - TASK-003 lab facts and Print Lab copy brief (G2): REVIEW, owner ChatGPT
 - TASK-004 Shopify architecture and edition model: DONE, D-006 (Basic approved, not bought) and D-007 approved
 - TASK-005 visual brief v0.2 (G3): IMPLEMENTED and merged; Dan approves G3 after the Claude prototype
+- TASK-007 logo, favicon, photographs: IMPLEMENTED
+- TASK-008 bilingual Astro site from prototype v8: IMPLEMENTED (D-015 to D-019)
 - TASK-006 print configurator and file upload spec: REVIEW, owner ChatGPT (starts when Dan sets IMPLEMENT)
 
 ## Blockers (all need a decision from Dan or Vladimir)
@@ -36,5 +38,5 @@
 
 ## Next
 
-- Dan: send `project/questions-for-vladimir.md` to Vladimir; set up the Cloudflare preview (D-012).
+- Dan: send `project/questions-for-vladimir.md` to Vladimir; deploy the Cloudflare preview (D-012) with Claude, one command at a time; create office@ in Cloudflare Email Routing (D-016).
 - ChatGPT: TASK-003 starts when Vladimir answers; TASK-004 and TASK-005 can start from the G1 baseline.

@@ -1,13 +1,14 @@
 ---
 import BaseLayout from "@layouts/BaseLayout.astro";
-import Container from "@components/ui/Container.astro";
-import { siteConfig } from "@data/site.config";
 ---
 
-<BaseLayout title={siteConfig.companyName} description={siteConfig.defaultMetaDescription} noindex>
-  <Container class="flex min-h-[60vh] flex-col items-center justify-center py-24 text-center">
-    <h1 class="text-4xl sm:text-5xl">{siteConfig.companyName}</h1>
-    <p class="mt-4 text-stone-600">{siteConfig.tagline}</p>
-    <p class="mt-2 text-sm text-stone-500">Site in preparation.</p>
-  </Container>
+<BaseLayout title="MONO Creative Studio" description="Fine art printing. Tipar fine art." noindex>
+  <section class="soon">
+    <h1>MONO Creative Studio</h1>
+    <p>Choose your language. Alege limba.</p>
+    <p style="display:flex;gap:12px;flex-wrap:wrap">
+      <a class="btn" href="/ro/" hreflang="ro" lang="ro">Română</a>
+      <a class="btn" href="/en/" hreflang="en" lang="en">English</a>
+    </p>
+  </section>
 </BaseLayout>

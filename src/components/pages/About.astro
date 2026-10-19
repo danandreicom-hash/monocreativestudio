@@ -1,0 +1,66 @@
+---
+import { getT, href, type Lang } from "@i18n/index";
+interface Props {
+  lang: Lang;
+}
+const { lang } = Astro.props;
+const t = getT(lang);
+const h = (page: Parameters<typeof href>[1], anchor?: string) => href(lang, page, anchor);
+---
+
+<section class="herofull" style="padding-top:0">
+  <div class="ph g3 dark r-hero has">
+    <img src="/images/photos/lab-painting-loupe.webp" alt="" loading="lazy" decoding="async" />
+  </div>
+  <div class="panel">
+    <span class="mark"></span>
+    <p class="eyebrow" style="margin:0">{t.nAbout}</p>
+    <h1>{t.abH1}</h1>
+    <p>{t.abP}</p>
+    <div style="display:flex;flex-wrap:wrap;gap:12px">
+      <a class="btn" href={h("lab", "lab-form")}>{t.quote}</a>
+    </div>
+  </div>
+</section>
+
+<section class="band">
+  <div class="eq">
+    <div>
+      <span class="mark"></span>
+      <h2>{t.abTeamT}</h2>
+      <p style="margin-top:16px">{t.abOwner}</p>
+      <p style="margin-top:16px">{t.abTeamP}</p>
+    </div>
+    <div class="ph r-wide has">
+      <img src="/images/photos/lab-beach-loupe.webp" alt="" loading="lazy" decoding="async" />
+    </div>
+  </div>
+</section>
+
+<section class="band">
+  <span class="mark"></span>
+  <h2>{t.abDoT}</h2>
+  <div class="three">
+    <div><h3>{t.abD1}</h3><p>{t.abD1p}</p></div>
+    <div><h3>{t.abD2}</h3><p>{t.abD2p}</p></div>
+    <div><h3>{t.abD3}</h3><p>{t.abD3p}</p></div>
+  </div>
+</section>
+
+<section class="band">
+  <div class="eq">
+    <div class="ph r-wide has">
+      <img src="/images/photos/gallery-berlin-series.webp" alt="" loading="lazy" decoding="async" />
+    </div>
+    <div>
+      <span class="mark"></span>
+      <h2>{t.abPartT}</h2>
+      <p style="margin-top:16px">
+        <span>{t.abPartP}</span>
+        <a href="https://conceptiones.com" target="_blank" rel="noopener">Conceptiones</a>
+        <span>{t.and}</span>
+        <a href="https://arthalle.com" target="_blank" rel="noopener">Arthalle</a>.
+      </p>
+    </div>
+  </div>
+</section>

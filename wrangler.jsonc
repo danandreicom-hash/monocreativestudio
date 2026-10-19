@@ -8,9 +8,14 @@
   // worker (fără câmp "main"). Formularul de contact e un Worker separat,
   // definit în workers/contact-form/wrangler.jsonc — vezi README § Formularul
   // de contact.
+  // Only "/" runs the edge Worker (language by visitor country, D-013);
+  // every other request is served directly from the static assets.
+  "main": "workers/edge-language/index.js",
   "assets": {
     "directory": "./dist",
+    "binding": "ASSETS",
     "not_found_handling": "404-page",
+    "run_worker_first": ["/"],
   },
 
   "observability": {

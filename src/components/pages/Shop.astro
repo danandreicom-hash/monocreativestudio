@@ -1,0 +1,67 @@
+---
+import { getT, href, type Lang } from "@i18n/index";
+interface Props {
+  lang: Lang;
+}
+const { lang } = Astro.props;
+const t = getT(lang);
+const h = (page: Parameters<typeof href>[1], anchor?: string) => href(lang, page, anchor);
+---
+
+<section class="herofull" style="padding-top:0">
+  <div class="ph g3 dark r-hero has">
+    <img src="/images/photos/room-dining-triptych.webp" alt="" loading="lazy" decoding="async" />
+  </div>
+  <div class="panel">
+    <span class="mark"></span>
+    <p class="eyebrow" style="margin:0">{t.nShop}</p>
+    <h1>{t.soonH1}</h1>
+    <p>{t.soonP}</p>
+    <div style="display:flex;flex-wrap:wrap;gap:12px">
+      <a class="btn" href={h("lab")}>{t.ctaLab}</a><a class="btn ghost" href={h("contact")}
+        >{t.write}</a
+      >
+    </div>
+  </div>
+</section>
+
+<section class="band">
+  <span class="mark"></span>
+  <h2>{t.shopStrT}</h2>
+  <p style="margin-top:16px">{t.shopStrP}</p>
+  <div class="three">
+    <div><h3>{t.shA}</h3><p>{t.shAp}</p></div>
+    <div><h3>{t.shB}</h3><p>{t.shBp}</p></div>
+    <div><h3>{t.shC}</h3><p>{t.shCp}</p></div>
+  </div>
+  <div class="tiles">
+    <div class="tile">
+      <div class="ph r-port has">
+        <img
+          src="/images/photos/room-bedroom-colour-sm.webp"
+          alt=""
+          loading="lazy"
+          decoding="async"
+        />
+      </div>
+    </div>
+    <div class="tile">
+      <div class="ph r-port has">
+        <img src="/images/photos/room-cats-poster-sm.webp" alt="" loading="lazy" decoding="async" />
+      </div>
+    </div>
+    <div class="tile">
+      <div class="ph r-port has">
+        <img src="/images/photos/room-hall-dance-sm.webp" alt="" loading="lazy" decoding="async" />
+      </div>
+    </div>
+    <div class="tile">
+      <div class="ph r-port has">
+        <img src="/images/photos/room-bedroom-car-sm.webp" alt="" loading="lazy" decoding="async" />
+      </div>
+    </div>
+  </div>
+  <div style="display:flex;flex-wrap:wrap;align-items:center;gap:16px;margin-top:32px">
+    <span class="badge">{t.soon}</span><span class="small">{t.shopNote}</span>
+  </div>
+</section>

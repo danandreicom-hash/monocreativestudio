@@ -1,0 +1,43 @@
+---
+import { getT, href, type Lang } from "@i18n/index";
+interface Props {
+  lang: Lang;
+}
+const { lang } = Astro.props;
+const t = getT(lang);
+const h = (page: Parameters<typeof href>[1], anchor?: string) => href(lang, page, anchor);
+---
+
+<section class="herofull" style="padding-top:0">
+  <div class="ph g3 dark r-hero has">
+    <img src="/images/photos/paper-samples.webp" alt="" loading="lazy" decoding="async" />
+  </div>
+  <div class="panel">
+    <span class="mark"></span>
+    <p class="eyebrow" style="margin:0">{t.nContact}</p>
+    <h1>{t.coH1}</h1>
+    <p>{t.coP}</p>
+    <div style="display:flex;flex-wrap:wrap;gap:12px">
+      <a class="btn" href={h("lab", "lab-form")}>{t.quote}</a>
+    </div>
+  </div>
+</section>
+
+<section class="band">
+  <div>
+    <div>
+      <span class="mark"></span>
+      <h2>{t.coT}</h2>
+      <dl class="facts">
+        <div>
+          <dt>{t.coMail}</dt><dd><span>{t.coMailV}</span> <span class="tc2">{t.coMailTc}</span></dd>
+        </div>
+        <div><dt>{t.coPhone}</dt><dd>+40 745 155 425</dd></div>
+        <div><dt>{t.coReply}</dt><dd>{t.coReplyV}</dd></div>
+        <div><dt>{t.coAddr}</dt><dd><span class="tc2">{t.tbc2}</span></dd></div>
+        <div><dt>{t.coSocial}</dt><dd>{t.coSocialV}</dd></div>
+      </dl>
+      <div style="margin-top:28px"><a class="btn" href={h("lab", "lab-form")}>{t.quote}</a></div>
+    </div>
+  </div>
+</section>

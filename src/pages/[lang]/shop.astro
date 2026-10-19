@@ -1,0 +1,16 @@
+---
+import BaseLayout from "@layouts/BaseLayout.astro";
+import Shop from "@components/pages/Shop.astro";
+import { langs, meta, type Lang } from "@i18n/index";
+
+export function getStaticPaths() {
+  return langs.map((lang) => ({ params: { lang } }));
+}
+
+const lang = Astro.params.lang as Lang;
+const m = meta[lang]["shop"];
+---
+
+<BaseLayout title={m.title} description={m.description} lang={lang} page="shop">
+  <Shop lang={lang} />
+</BaseLayout>

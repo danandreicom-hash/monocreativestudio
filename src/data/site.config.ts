@@ -1,7 +1,7 @@
 /**
  * Site configuration: single source of truth for business data.
  * Only confirmed MONO facts or the literal "to confirm" belong here (D-002).
- * Contact, legal and social data stay empty until Vladimir confirms them.
+ * Email is the planned address (D-016); the mailbox is created in Cloudflare Email Routing.
  */
 
 export const siteConfig = {
@@ -11,14 +11,14 @@ export const siteConfig = {
   language: "en",
 
   contact: {
-    email: "" as string,
+    email: "office@monocreativestudio.com" as string,
     phone: "+40 745 155 425" as string,
     address: "" as string,
   },
 
   social: {} as Record<string, string>,
 
-  nav: [{ label: "Home", href: "/" }],
+  nav: [] as { label: string; href: string }[],
 
   footerLinks: [] as { label: string; href: string }[],
 } as const;

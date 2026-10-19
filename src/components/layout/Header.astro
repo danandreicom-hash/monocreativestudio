@@ -1,78 +1,42 @@
 ---
-import { siteConfig } from "@data/site.config";
-import Container from "@components/ui/Container.astro";
-import Icon from "@components/icons/Icon.astro";
-
-const currentPath = Astro.url.pathname;
-
-function isActive(href: string) {
-  if (href === "/") return currentPath === "/";
-  return currentPath.startsWith(href);
+import { getT, href, type Lang, type Page } from "@i18n/index";
+interface Props {
+  lang: Lang;
+  page: Page;
 }
+const { lang, page } = Astro.props;
+const t = getT(lang);
+const h = (p: Page, anchor?: string) => href(lang, p, anchor);
+const switchHref = (l: Lang) => href(l, page);
 ---
 
-<header class="sticky top-0 z-40 border-b border-stone-200 bg-white/90 backdrop-blur-sm">
-  <Container class="flex h-18 items-center justify-between py-4">
-    <a href="/" aria-label={siteConfig.companyName}>
-      <img
-        src="/brand/mono-logo-horizontal.svg"
-        alt={siteConfig.companyName}
-        width="152"
-        height="41"
-        class="h-8 w-auto sm:h-9"
-      />
-    </a>
-
-    <nav aria-label="Main" class="hidden items-center gap-8 lg:flex">
+<header class="site">
+  <div class="wrap">
+    <a class="logo-link" aria-label="MONO Creative Studio" href={h("home")}
+      ><img class="logo" alt="MONO Creative Studio" src="/brand/mono-logo-horizontal.svg" /></a
+    >
+    <nav class="main" aria-label="Main">
+      <a href={h("shop")} aria-current={page === "shop" ? "page" : undefined}>{t.nShop}</a>
+      <a href={h("lab")} aria-current={page === "lab" ? "page" : undefined}>{t.nLab}</a>
+      <a href={h("about")} aria-current={page === "about" ? "page" : undefined}>{t.nAbout}</a>
+      <a href={h("contact")} aria-current={page === "contact" ? "page" : undefined}>{t.nContact}</a>
+    </nav>
+    <div class="lang" role="group" aria-label="Language / Limbă">
       {
-        siteConfig.nav.map((item) => (
+        (["ro", "en"] as const).map((l) => (
           <a
-            href={item.href}
-            aria-current={isActive(item.href) ? "page" : undefined}
-            class:list={[
-              "text-sm font-medium transition-colors",
-              isActive(item.href) ? "text-stone-900" : "text-stone-600 hover:text-stone-900",
-            ]}
+            href={switchHref(l)}
+            lang={l}
+            hreflang={l}
+            data-lang={l}
+            aria-current={l === lang ? "true" : undefined}
+            aria-label={l === "ro" ? "Română" : "English"}
           >
-            {item.label}
+            {l.toUpperCase()}
           </a>
         ))
       }
-    </nav>
-
-    <details class="group relative lg:hidden">
-      <summary
-        class="flex size-10 list-none items-center justify-center rounded-md text-stone-700 [&::-webkit-details-marker]:hidden"
-        aria-label="Open navigation menu"
-      >
-        <Icon name="menu" class="size-6 group-open:hidden" />
-        <Icon name="close" class="hidden size-6 group-open:block" />
-      </summary>
-      <nav
-        aria-label="Main (mobile)"
-        class="absolute top-full right-0 mt-2 w-64 rounded-md bg-white p-4 ring-1 ring-stone-200"
-      >
-        <ul class="flex flex-col gap-1">
-          {
-            siteConfig.nav.map((item) => (
-              <li>
-                <a
-                  href={item.href}
-                  aria-current={isActive(item.href) ? "page" : undefined}
-                  class:list={[
-                    "block rounded px-3 py-2 text-sm font-medium",
-                    isActive(item.href)
-                      ? "bg-stone-100 text-stone-900"
-                      : "text-stone-700 hover:bg-stone-50",
-                  ]}
-                >
-                  {item.label}
-                </a>
-              </li>
-            ))
-          }
-        </ul>
-      </nav>
-    </details>
-  </Container>
+    </div>
+    <a class="btn" href={h("lab", "lab-form")}>{t.quote}</a>
+  </div>
 </header>

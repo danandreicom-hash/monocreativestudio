@@ -1,35 +1,43 @@
 ---
 import { siteConfig } from "@data/site.config";
-import Container from "@components/ui/Container.astro";
-
-const year = new Date().getFullYear();
-const { email, phone } = siteConfig.contact;
+import { getT, href, type Lang } from "@i18n/index";
+interface Props {
+  lang: Lang;
+}
+const { lang } = Astro.props;
+const t = getT(lang);
+const h = (p: Parameters<typeof href>[1], anchor?: string) => href(lang, p, anchor);
 ---
 
-<footer class="bg-[#2b2b2c] text-white">
-  <Container class="flex flex-col gap-3 py-12 text-sm text-white/85">
-    <img
-      src="/brand/mono-mark-square-light.svg"
-      alt={siteConfig.companyName}
-      width="56"
-      height="56"
-      class="size-14"
-      loading="lazy"
-    />
-    <p>{siteConfig.tagline}</p>
-    {email && <a href={`mailto:${email}`}>{email}</a>}
-    {phone && <a href={`tel:${phone.replace(/\s/g, "")}`}>{phone}</a>}
-    {
-      siteConfig.footerLinks.length > 0 && (
-        <ul class="flex gap-5">
-          {siteConfig.footerLinks.map((link) => (
-            <li>
-              <a href={link.href}>{link.label}</a>
-            </li>
-          ))}
-        </ul>
-      )
-    }
-    <p class="text-white/70">© {year} {siteConfig.companyName}</p>
-  </Container>
+<footer class="site">
+  <div class="wrap fgrid">
+    <div class="fbrand">
+      <img
+        class="logo"
+        style="width:72px"
+        alt="MONO Creative Studio"
+        src="/brand/mono-mark-square-light.svg"
+      />
+      <p class="small">{t.owner}</p>
+    </div>
+    <div class="cols">
+      <a href={h("shop")}>{t.nShop}</a>
+      <a href={h("lab")}>{t.nLab}</a>
+      <a href={h("about")}>{t.nAbout}</a>
+      <a href={h("contact")}>{t.nContact}</a>
+    </div>
+    <div class="small">
+      <div><a href={`mailto:${siteConfig.contact.email}`}>{siteConfig.contact.email}</a></div>
+      <div>
+        <a href={`tel:${siteConfig.contact.phone.replace(/\s/g, "")}`}>{siteConfig.contact.phone}</a
+        >
+      </div>
+      <div>
+        <span>{t.fPartners}</span>
+        <a href="https://conceptiones.com" target="_blank" rel="noopener">Conceptiones</a>
+        <span>{t.and}</span>
+        <a href="https://arthalle.com" target="_blank" rel="noopener">Arthalle</a>
+      </div>
+    </div>
+  </div>
 </footer>

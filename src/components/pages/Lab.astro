@@ -1,0 +1,200 @@
+---
+import { siteConfig } from "@data/site.config";
+import { getT, href, type Lang } from "@i18n/index";
+interface Props {
+  lang: Lang;
+}
+const { lang } = Astro.props;
+const t = getT(lang);
+const h = (page: Parameters<typeof href>[1], anchor?: string) => href(lang, page, anchor);
+---
+
+<section class="herofull" style="padding-top:0">
+  <div class="ph g3 dark r-hero has">
+    <img src="/images/photos/printer-beach.webp" alt="" loading="lazy" decoding="async" />
+  </div>
+  <div class="panel">
+    <span class="mark"></span>
+    <p class="eyebrow" style="margin:0">{t.nLab}</p>
+    <h1>{t.labH1}</h1>
+    <p>{t.labSub}</p>
+    <div style="display:flex;flex-wrap:wrap;gap:12px">
+      <a class="btn" href={h("lab", "lab-form")}>{t.quote}</a>
+    </div>
+  </div>
+</section>
+
+<section class="band">
+  <div class="eq">
+    <div class="ph r-wide has">
+      <img src="/images/photos/printer-sunset.webp" alt="" loading="lazy" decoding="async" />
+    </div>
+    <div>
+      <span class="mark"></span>
+      <h2>{t.eqT}</h2>
+      <p style="margin-top:16px">{t.eqP}</p>
+      <dl class="facts">
+        <div><dt>{t.fPrinter}</dt><dd>{t.fPrinterV}</dd></div>
+        <div><dt>{t.fInk}</dt><dd>{t.fInkV}</dd></div>
+        <div><dt>{t.fSize}</dt><dd>{t.fSizeV}</dd></div>
+        <div><dt>{t.fColour}</dt><dd>{t.fColourV}</dd></div>
+        <div><dt>{t.fMedia}</dt><dd>{t.fMediaV}</dd></div>
+        <div><dt>{t.fFrame}</dt><dd>{t.fFrameV}</dd></div>
+      </dl>
+    </div>
+  </div>
+</section>
+
+<section class="band">
+  <span class="mark"></span>
+  <h2>{t.papT}</h2>
+  <p style="margin-top:16px">{t.papLab}</p>
+  <div class="cards4">
+    <div class="card"><h3>{t.p1}</h3><p>{t.p1p}</p><span class="tc2">{t.mk}</span></div>
+    <div class="card"><h3>{t.p2}</h3><p>{t.p2p}</p><span class="tc2">{t.mk}</span></div>
+    <div class="card"><h3>{t.p3}</h3><p>{t.p3p}</p></div>
+    <div class="card"><h3>{t.p4}</h3><p>{t.p4p}</p></div>
+  </div>
+</section>
+
+<section class="band">
+  <span class="mark"></span>
+  <h2>{t.cmpT}</h2>
+  <p style="margin-top:16px">{t.cmpP}</p>
+  <div class="tablewrap">
+    <table>
+      <thead><tr><th></th><th>{t.cmpA}</th><th>{t.cmpB}</th></tr></thead>
+      <tbody>
+        <tr><td>{t.cPaper}</td><td>{t.cPaperA}</td><td>{t.cPaperB}</td></tr>
+        <tr><td>{t.cInk}</td><td>{t.cInkA}</td><td>{t.cInkB}</td></tr>
+        <tr><td>{t.cColour}</td><td>{t.cColourA}</td><td>{t.cColourB}</td></tr>
+        <tr><td>{t.cSize}</td><td>{t.cSizeA}</td><td>{t.cSizeB}</td></tr>
+        <tr><td>{t.cCheck}</td><td>{t.cCheckA}</td><td>{t.cCheckB}</td></tr>
+        <tr><td>{t.cCert}</td><td>{t.cCertA}</td><td>{t.cCertB}</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="small" style="margin-top:20px">{t.cmpNote}</p>
+</section>
+
+<section class="band">
+  <span class="mark"></span>
+  <h2>{t.prT}</h2>
+  <p style="margin-top:16px">{t.prP}</p>
+  <div class="three" style="margin-top:32px">
+    <div><h3>{t.tierE}</h3><p>{t.tierEp}</p></div><div><h3>{t.tierP}</h3><p>{t.tierPp}</p></div><div
+    >
+      <h3>{t.tierF}</h3><p>{t.tierFp}</p>
+    </div>
+  </div>
+  <div class="tablewrap">
+    <table>
+      <thead
+        ><tr><th>{t.thSize}</th><th>{t.tierE}</th><th>{t.tierP}</th><th>{t.tierF}</th></tr></thead
+      >
+      <tbody>
+        <tr><td>20 × 30</td><td>€ 15</td><td>€ 17</td><td>€ 19</td></tr>
+        <tr><td>30 × 30</td><td>€ 16</td><td>€ 18</td><td>€ 21</td></tr>
+        <tr><td>30 × 40</td><td>€ 17</td><td>€ 19</td><td>€ 23</td></tr>
+        <tr><td>40 × 50</td><td>€ 20</td><td>€ 22</td><td>€ 28</td></tr>
+        <tr><td>40 × 60</td><td>€ 21</td><td>€ 24</td><td>€ 31</td></tr>
+        <tr><td>50 × 70</td><td>€ 25</td><td>€ 30</td><td>€ 39</td></tr>
+        <tr><td>60 × 80</td><td>€ 30</td><td>€ 36</td><td>€ 49</td></tr>
+        <tr><td>70 × 70</td><td>€ 31</td><td>€ 37</td><td>€ 50</td></tr>
+        <tr><td>70 × 100</td><td>€ 38</td><td>€ 47</td><td>€ 66</td></tr>
+        <tr><td>70 × 150</td><td>€ 52</td><td>€ 65</td><td>€ 91</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="three">
+    <div><h3>{t.dsT}</h3><p>{t.dsP}</p></div>
+    <div><h3>{t.payT}</h3><p>{t.payP}</p></div>
+    <div><h3>{t.timeT}</h3><p>{t.timeP}</p></div>
+  </div>
+  <span class="tc2" style="margin-top:20px">{t.tbcPrice}</span>
+</section>
+
+<section class="band pitch">
+  <div>
+    <span class="mark"></span>
+    <h2>{t.edT}</h2>
+    <p class="lead">{t.edP}</p>
+    <ul class="ticks">
+      <li><span><b>{t.edB1}</b><br /><span>{t.edB1p}</span></span></li>
+      <li><span><b>{t.edB2}</b><br /><span>{t.edB2p}</span></span></li>
+      <li><span><b>{t.edB3}</b><br /><span>{t.edB3p}</span></span></li>
+    </ul>
+    <span class="tc2">{t.tbc}</span>
+  </div>
+  <div class="ph r-wide has">
+    <img src="/images/photos/lab-car-print-table.webp" alt="" loading="lazy" decoding="async" />
+  </div>
+</section>
+
+<section class="band">
+  <span class="mark"></span>
+  <h2>{t.fileT}</h2>
+  <p style="margin-top:16px">{t.fileP}</p>
+  <div class="three">
+    <div><h3>{t.fl1}</h3><p>{t.fl1p}</p></div>
+    <div><h3>{t.fl2}</h3><p>{t.fl2p}</p></div>
+    <div><h3>{t.fl3}</h3><p>{t.fl3p}</p></div>
+  </div>
+</section>
+
+<section class="band">
+  <h2>{t.whoT}</h2>
+  <div class="three">
+    <div><h3>{t.aArt}</h3><p>{t.labArt}</p></div>
+    <div><h3>{t.aDes}</h3><p>{t.labDes}</p></div>
+    <div><h3>{t.aBiz}</h3><p>{t.labBiz}</p></div>
+  </div>
+</section>
+
+<section class="band" id="lab-form">
+  <span class="mark"></span>
+  <h2>{t.qT}</h2>
+  <p style="margin-top:20px">{t.qP}</p>
+  <form id="quoteForm" novalidate data-mailto={siteConfig.contact.email} data-sub={t.fSubject}>
+    <label for="q-role"
+      ><span>{t.fRole}</span>
+      <select id="q-role"
+        ><option>{t.oArt}</option><option>{t.oDes}</option><option>{t.oBiz}</option></select
+      >
+    </label>
+    <label for="q-email"
+      ><span>{t.fEmail}</span>
+      <input id="q-email" type="email" autocomplete="email" aria-describedby="q-err" />
+    </label>
+    <div class="err" id="q-err" role="alert">{t.fErr}</div>
+    <label for="q-brief"
+      ><span>{t.fBrief}</span>
+      <textarea id="q-brief"></textarea>
+    </label>
+    <div><button type="submit" class="btn">{t.fSend}</button></div>
+    <p class="small" id="q-ok" hidden>{t.fOk}</p>
+  </form>
+</section>
+<script>
+  const form = document.getElementById("quoteForm") as HTMLFormElement | null;
+  form?.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const em = document.getElementById("q-email") as HTMLInputElement;
+    const err = document.getElementById("q-err") as HTMLElement;
+    const ok = document.getElementById("q-ok") as HTMLElement;
+    const valid = /^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(em.value);
+    err.classList.toggle("on", !valid);
+    em.setAttribute("aria-invalid", String(!valid));
+    ok.hidden = !valid;
+    if (!valid) {
+      em.focus();
+      return;
+    }
+    const role = (document.getElementById("q-role") as HTMLSelectElement).value;
+    const brief = (document.getElementById("q-brief") as HTMLTextAreaElement).value;
+    const to = form.dataset.mailto || "";
+    const sub = form.dataset.sub || "";
+    const body = `${role}\n${em.value}\n\n${brief}`;
+    window.location.href = `mailto:${to}?subject=${encodeURIComponent(sub)}&body=${encodeURIComponent(body)}`;
+  });
+</script>

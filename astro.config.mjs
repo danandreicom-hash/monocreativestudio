@@ -1,5 +1,5 @@
 // @ts-check
-import { defineConfig, fontProviders } from "astro/config";
+import { defineConfig } from "astro/config";
 import mdx from "@astrojs/mdx";
 import sitemap from "@astrojs/sitemap";
 import tailwindcss from "@tailwindcss/vite";
@@ -38,27 +38,7 @@ export default defineConfig({
     plugins: [tailwindcss()],
   },
 
-  // Fonturi auto-găzduite (self-hosted) prin Fonts API nativ Astro — fără request-uri
-  // externe către Google Fonts la runtime (mai rapid + fără implicații GDPR).
-  // Numele variabilelor CSS sunt deliberat diferite de "--font-sans"/"--font-display"
-  // (tokenii Tailwind definiți în src/styles/global.css) ca să nu se suprascrie —
-  // Tailwind referențiază aceste variabile, nu invers.
-  fonts: [
-    {
-      provider: fontProviders.google(),
-      name: "Inter",
-      cssVariable: "--font-inter",
-      weights: [400, 500, 600, 700],
-      fallbacks: ["system-ui", "sans-serif"],
-    },
-    {
-      provider: fontProviders.google(),
-      name: "Fraunces",
-      cssVariable: "--font-fraunces",
-      weights: [500, 600],
-      fallbacks: ["Georgia", "serif"],
-    },
-  ],
+  // Typeface: Outfit (SIL OFL), self-hosted from public/fonts (D-015); see src/styles/mono.css.
 
   image: {
     // Limite rezonabile pentru surse de imagini remote (ex. CMS extern, dacă se adaugă ulterior).
