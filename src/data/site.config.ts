@@ -12,7 +12,7 @@ export const siteConfig = {
 
   contact: {
     email: "" as string,
-    phone: "" as string,
+    phone: "+40 745 155 425" as string,
     address: "" as string,
   },
 

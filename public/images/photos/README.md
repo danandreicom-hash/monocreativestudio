@@ -3,6 +3,8 @@
 Source: Dan Andrei, folder "MONO FOLDER/mono photos", 2026-10-19 (originals stay outside the repository).
 Optimised to WebP: wide images 1920 px + 960 px (`-sm`), square and portrait images up to 1024/1254 px + 640 px (`-sm`). About 4.6 MB for all 48 files.
 
+Update 2026-10-19: Dan states all images are his and that Conceptiones tags may appear (partner brand). Points 2 and 3 below are therefore closed; 1, 4 and 5 stay open.
+
 Status: **illustrative placeholders**. The images look computer-generated (people, printers, gallery rooms). Before launch each one must be either replaced with a real MONO lab photo or cleared, and Vladimir must confirm that nothing shown misstates the lab (D-002).
 
 | File                                                        | Subject                                    | Used for (Home)                             |
