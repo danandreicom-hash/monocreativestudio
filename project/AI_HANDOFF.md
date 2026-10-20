@@ -38,5 +38,5 @@
 
 ## Next
 
-- Dan: send `project/questions-for-vladimir.md` to Vladimir; deploy the Cloudflare preview (D-012) with Claude, one command at a time; review the live site on monocreativestudio.com (D-023); send a test mail to vladimir@ (D-022); www to apex 301 redirect is live (Cloudflare redirect rule, 2026-10-20); before G4 only the indexing switch remains.
+- Dan: send `project/questions-for-vladimir.md` to Vladimir; deploy the Cloudflare preview (D-012) with Claude, one command at a time; review the live site on monocreativestudio.com (D-023); send a test mail to vladimir@ (D-022); www to apex 301 redirect is live (Cloudflare redirect rule, 2026-10-20); before G4 only the indexing switch remains. Dan (2026-10-20): no corrections now; ICC profiles and Shopify on standby.
 - ChatGPT: TASK-003 starts when Vladimir answers; TASK-004 and TASK-005 can start from the G1 baseline.
