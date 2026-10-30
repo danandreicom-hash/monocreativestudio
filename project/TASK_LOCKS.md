@@ -14,3 +14,4 @@ One owner per task. Rules: `project/COORDINATION.md`. Owner is `CLAUDE`, `CODEX`
 Add one row per task. Remove nothing; set the owner to `NONE` and the status to `IMPLEMENTED` on merge.
 | TASK-007 | IMPLEMENTED | NONE | main | 2026-10-19 | `public/brand/**`, `public/images/**`, `public/favicon*`, `src/components/layout/**` |
 | TASK-008 | IMPLEMENTED | NONE | main | 2026-10-19 | `src/**`, `public/**`, `astro.config.mjs`, `wrangler.jsonc` |
+| TASK-009 | IMPLEMENT (release build G4: open indexing, D-025) | CLAUDE | claude/TASK-009 | 2026-10-30 | `package.json`, `src/pages/robots.txt.ts`, `src/pages/llms.txt.ts`, `README.md`, `project/tasks/TASK-009.md`, `project/06_DECISIONS.md`, `project/AI_HANDOFF.md`, `project/TASK_LOCKS.md` |
