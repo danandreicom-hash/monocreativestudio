@@ -1,9 +1,9 @@
 # AI Handoff
 
 - Protocol version: 2.0 (CC WEBDEV, `CC_WEBDEV.md`)
-- Updated: 2026-10-19
+- Updated: 2026-10-30
 - Base: bootstrap from `you-on-the-com` master (CC WEBDEV v2.0, commit e1102f1). TASK-001 (demo removed, MONO placeholder) is merged to main.
-- Live (noindex) on monocreativestudio.com since 2026-10-20; the workers.dev preview is off. Overall: Phase 1 = site + Print Lab + small Shopify shop. The bilingual Astro site (TASK-008) is built locally; nothing is published. Preview prototype v8 is a private artifact.
+- Live on monocreativestudio.com since 2026-10-20 (noindex until TASK-009 is deployed, D-025); the workers.dev preview is off. Overall: Phase 1 = site + Print Lab + small Shopify shop. The bilingual Astro site (TASK-008) is built locally; nothing is published. Preview prototype v8 is a private artifact.
 
 ## Read order (every task)
 
@@ -23,6 +23,7 @@
 - TASK-007 logo, favicon, photographs: IMPLEMENTED
 - TASK-008 bilingual Astro site from prototype v8: IMPLEMENTED (D-015 to D-019)
 - TASK-006 print configurator and file upload spec: REVIEW, owner ChatGPT (starts when Dan sets IMPLEMENT)
+- TASK-009 release build, open indexing (D-025): IMPLEMENTED on `claude/TASK-009`; needs merge, then `npm run deploy` (it now builds the public version) and a live check of robots.txt, `/llms.txt` and meta robots
 
 ## Blockers (all need a decision from Dan or Vladimir)
 
@@ -33,7 +34,7 @@
 
 - Statuses: DRAFT, REVIEW, APPROVED, IMPLEMENT, IMPLEMENTED, QA, DONE. Severities: P0, P1, P2.
 - 0 EUR default; Dan approves any cost first (D-006).
-- Indexing stays off until the release build (G4).
+- Indexing opens with the release build (D-025): `npm run deploy` always builds the public version.
 - Unresolved question: AMBIGUITY note in the task file, task stays `REVIEW`.
 
 ## Next

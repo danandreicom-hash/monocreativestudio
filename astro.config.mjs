@@ -30,7 +30,8 @@ export default defineConfig({
   integrations: [
     mdx(),
     sitemap({
-      filter: (page) => !page.includes("/api/"),
+      // The bare "/" is the noindex language chooser (edge Worker, D-013): keep it out of the sitemap.
+      filter: (page) => !page.includes("/api/") && new URL(page).pathname !== "/",
     }),
   ],
 
