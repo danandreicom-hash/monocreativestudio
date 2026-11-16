@@ -1,9 +1,9 @@
 # AI Handoff
 
 - Protocol version: 2.0 (CC WEBDEV, `CC_WEBDEV.md`)
-- Updated: 2026-10-30
+- Updated: 2026-11-16
 - Base: bootstrap from `you-on-the-com` master (CC WEBDEV v2.0, commit e1102f1). TASK-001 (demo removed, MONO placeholder) is merged to main.
-- Live on monocreativestudio.com since 2026-10-20 (noindex until TASK-009 is deployed, D-025); the workers.dev preview is off. Overall: Phase 1 = site + Print Lab + small Shopify shop. The bilingual Astro site (TASK-008) is built locally; nothing is published. Preview prototype v8 is a private artifact.
+- Live on monocreativestudio.com since 2026-10-20; indexing open since 2026-10-30 (D-025); latest deploy 2026-11-16, version 06efde26 (main @ 3cee028); the workers.dev preview is off. Overall: Phase 1 = site + Print Lab + small Shopify shop. The bilingual Astro site (TASK-008) is live. Preview prototype v8 is a private artifact.
 
 ## Read order (every task)
 
@@ -23,8 +23,8 @@
 - TASK-007 logo, favicon, photographs: IMPLEMENTED
 - TASK-008 bilingual Astro site from prototype v8: IMPLEMENTED (D-015 to D-019)
 - TASK-006 print configurator and file upload spec: REVIEW, owner ChatGPT (starts when Dan sets IMPLEMENT)
-- TASK-010 descriptive home titles EN/RO (D-026): IMPLEMENTED on `claude/TASK-010`; needs merge, then `npm run deploy`
-- TASK-009 release build, open indexing (D-025): IMPLEMENTED on `claude/TASK-009`; needs merge, then `npm run deploy` (it now builds the public version) and a live check of robots.txt, `/llms.txt` and meta robots
+- TASK-010 descriptive home titles EN/RO (D-026): IMPLEMENTED, merged (PR #3) and deployed 2026-11-16, version 06efde26; live check done
+- TASK-009 release build, open indexing (D-025): IMPLEMENTED, merged (PR #2) and deployed 2026-10-30, version c1623434; robots.txt, `/llms.txt` and meta robots checked live
 
 ## Blockers (all need a decision from Dan or Vladimir)
 
