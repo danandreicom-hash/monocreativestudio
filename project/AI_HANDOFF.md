@@ -23,6 +23,7 @@
 - TASK-007 logo, favicon, photographs: IMPLEMENTED
 - TASK-008 bilingual Astro site from prototype v8: IMPLEMENTED (D-015 to D-019)
 - TASK-006 print configurator and file upload spec: REVIEW, owner ChatGPT (starts when Dan sets IMPLEMENT)
+- TASK-010 descriptive home titles EN/RO (D-026): IMPLEMENTED on `claude/TASK-010`; needs merge, then `npm run deploy`
 - TASK-009 release build, open indexing (D-025): IMPLEMENTED on `claude/TASK-009`; needs merge, then `npm run deploy` (it now builds the public version) and a live check of robots.txt, `/llms.txt` and meta robots
 
 ## Blockers (all need a decision from Dan or Vladimir)
