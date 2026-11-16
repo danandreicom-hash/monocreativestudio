@@ -29,7 +29,7 @@ export function href(lang: Lang, page: Page, anchor?: string): string {
 export const meta: Record<Lang, Record<Page, { title: string; description: string }>> = {
   en: {
     home: {
-      title: "MONO Creative Studio",
+      title: "MONO Creative Studio, fine art prints made in our own lab",
       description:
         "Fine art printing in our own lab: archival papers, canvas, metal and glass, from 20 × 30 to 70 × 150 cm.",
     },
@@ -56,7 +56,7 @@ export const meta: Record<Lang, Record<Page, { title: string; description: strin
   },
   ro: {
     home: {
-      title: "MONO Creative Studio",
+      title: "MONO Creative Studio, printuri fine art în propriul laborator",
       description:
         "Tipar fine art în laboratorul nostru: hârtii de arhivă, canvas, metal și sticlă, de la 20 × 30 la 70 × 150 cm.",
     },

@@ -25,7 +25,9 @@ const {
   lang = "en",
 } = Astro.props;
 
-const pageTitle = title === siteConfig.companyName ? title : `${title} · ${siteConfig.companyName}`;
+const pageTitle = title.startsWith(siteConfig.companyName)
+  ? title
+  : `${title} · ${siteConfig.companyName}`;
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 const imageURL = image ? new URL(image, Astro.site) : undefined;
 // Fail-closed: indexing only when the release build sets PUBLIC_ALLOW_INDEXING=true.

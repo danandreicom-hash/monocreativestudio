@@ -15,3 +15,4 @@ Add one row per task. Remove nothing; set the owner to `NONE` and the status to 
 | TASK-007 | IMPLEMENTED | NONE | main | 2026-10-19 | `public/brand/**`, `public/images/**`, `public/favicon*`, `src/components/layout/**` |
 | TASK-008 | IMPLEMENTED | NONE | main | 2026-10-19 | `src/**`, `public/**`, `astro.config.mjs`, `wrangler.jsonc` |
 | TASK-009 | IMPLEMENTED (release build G4: open indexing, D-025) | CLAUDE | claude/TASK-009 | 2026-10-30 | `package.json`, `astro.config.mjs`, `src/pages/robots.txt.ts`, `src/pages/llms.txt.ts`, `README.md`, `project/tasks/TASK-009.md`, `project/06_DECISIONS.md`, `project/AI_HANDOFF.md`, `project/TASK_LOCKS.md` |
+| TASK-010 | IMPLEMENTED (descriptive home titles, D-026) | NONE | claude/TASK-010 | 2026-11-16 | `src/i18n/index.ts`, `src/components/seo/Seo.astro`, `project/tasks/TASK-010.md`, `project/06_DECISIONS.md`, `project/TASK_LOCKS.md`, `project/AI_HANDOFF.md` |
